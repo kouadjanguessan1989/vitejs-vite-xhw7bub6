@@ -36,6 +36,7 @@ const MODES = {
   180:{label:"180 Questions",desc:"~240 min — Examen complet PMP® 2026", duree:240*60},
 };
 
+const THEME_DUREE = 25*60; // 25 minutes pour la révision thématique (20 questions)
 const THEMES = [
   {id:"personnes", label:"Personnes",       domaine:"Personnes",                approche:null,        icon:"👥",desc:"Leadership, conflits, équipe"},
   {id:"processus", label:"Processus",        domaine:"Processus",                approche:null,        icon:"⚙️",desc:"EVM, risques, qualité, achats"},
@@ -1325,6 +1326,632 @@ const TOUTES_QUESTIONS = [
   ],
   correct:1,
   explication:`La réponse B est correcte. Le "redlining" (discrimination dans l'accès au crédit basée sur la localisation géographique, souvent corrélée à la composition raciale des quartiers) est illégal dans la plupart des pays avec des réglementations bancaires avancées (Fair Housing Act aux USA, équivalents européens). La persistance d'un écart d'approbation significatif après contrôle des variables financières pertinentes est un signal sérieux de discrimination indirecte. La neutralisation simple de l'adresse (C) ne résout pas le problème si d'autres variables sont des proxies géographiques (type d'emploi, école fréquentée, etc.). Un audit indépendant est la démarche appropriée avant de conclure dans un sens ou dans l'autre.` },
+,
+// ── Questions supplémentaires Personnes ──
+{ id:"P-031", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Vous êtes chef de projet d'une équipe de 8 développeurs. Lors du sprint 5, vous remarquez que deux membres ne participent jamais aux discussions techniques pendant les réunions de planification, bien qu'ils soient compétents selon leurs livrables individuels. En aparté, ils vous confient qu'ils "ne voient pas l'utilité de ces réunions". Comment abordez-vous cette situation ?`,
+  options:[
+    `A. Rendre la participation aux réunions obligatoire et noter les absences — la discipline collective est non négociable dans une équipe Agile.`,
+    `B. Explorer avec eux les raisons de ce désengagement (format inadapté ? sentiment que leur avis n'est pas pris en compte ? préférence pour la communication écrite ?) ; tester des adaptations du format (réunions plus courtes, contribution asynchrone préalable, rôles tournants d'animateur) pour voir ce qui augmente leur engagement réel.`,
+    `C. Accepter la situation — certains profils sont naturellement introvertis et leur contribution individuelle est suffisante.`,
+    `D. Les retirer des réunions de planification et leur transmettre les décisions par email pour gagner en efficacité collective.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le désengagement en réunion est souvent un symptôme d'un problème de format ou de dynamique, pas d'un manque de motivation. Comprendre les causes réelles avant d'agir permet de trouver des adaptations qui bénéficient à toute l'équipe. Rendre la participation obligatoire (A) sans adresser le fond crée une présence physique sans engagement réel. Accepter (C) prive l'équipe de perspectives précieuses. Exclure (D) aggrave le problème d'intégration.`,
+},
+
+{ id:"P-032", domaine:"Personnes", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de 24 mois, votre équipe de 15 personnes traverse une période de forte pression (3 jalons critiques en 6 semaines). Vous constatez que les heures supplémentaires s'accumulent (moyenne de 55h/semaine), que les erreurs augmentent, et que 2 membres ont pris des arrêts maladie. Le sponsor presse pour maintenir le calendrier. Comment gérez-vous cette situation ?`,
+  options:[
+    `A. Maintenir le rythme — la pression des jalons est temporaire et l'équipe peut tenir encore 6 semaines.`,
+    `B. Présenter au sponsor une analyse de risque chiffrée : le taux d'erreurs croissant en période de surcharge génère une dette qualité (reprises, bugs) qui coûte généralement plus que le bénéfice du maintien du calendrier ; proposer soit une extension de 2 semaines sur un jalon, soit un renfort temporaire de ressources, soit une réduction du périmètre livré — en montrant que la soutenabilité du rythme protège la qualité finale du projet.`,
+    `C. Demander à chaque membre de l'équipe de gérer personnellement sa charge et de signaler s'ils sont dépassés — la responsabilité individuelle est fondamentale.`,
+    `D. Recruter immédiatement des intérimaires pour absorber la surcharge sans remettre en question le calendrier.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La surcharge chronique (55h/semaine + arrêts maladie) est un signal d'alarme sérieux — elle génère des erreurs coûteuses et risque de perdre des membres clés. Le chef de projet a la responsabilité de signaler ce risque au sponsor avec des données factuelles (ECO T3 — Soutenir la performance). La présentation d'options (extension, renfort, périmètre réduit) donne au sponsor les leviers pour décider. Maintenir le rythme (A) sans action est une négligence de management.`,
+},
+
+{ id:"P-033", domaine:"Personnes", approche:"Hybride", type:"standard",
+  question:`Vous gérez un projet international avec des membres d'équipe en France, au Sénégal et en Indonésie. Vous observez que les membres français ont tendance à exprimer leurs désaccords directement en réunion, tandis que les membres sénégalais et indonésiens expriment rarement des désaccords en public mais vous contactent individuellement après les réunions avec des préoccupations importantes. Des décisions sont prises en réunion sur la base d'un consensus apparent qui ne reflète pas les vraies positions. Comment améliorez-vous ce processus ?`,
+  options:[
+    `A. Demander à tous les membres de s'adapter au mode de communication direct — c'est la norme professionnelle internationale.`,
+    `B. Adapter le processus de prise de décision pour valoriser les deux styles : introduire un temps de réflexion asynchrone avant les décisions importantes (les membres soumettent leurs positions par écrit avant la réunion), utiliser des votes anonymes pour les décisions sensibles, et créer explicitement un espace pour les retours post-réunion qui sont intégrés dans les décisions finales — documenter que le consensus est provisoire jusqu'à confirmation individuelle.`,
+    `C. Tenir deux types de réunions : des réunions plénières pour les informations, et des réunions bilatérales avec chaque culture pour collecter les vrais avis.`,
+    `D. Désigner un représentant culturel pour chaque groupe qui synthétise les positions avant les réunions plénières.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Les styles de communication directe vs indirecte sont des différences culturelles légitimes — forcer l'adaptation unilatérale (A) marginalise les membres des cultures à communication indirecte et appauvrit les décisions. L'introduction de mécanismes asynchrones et anonymes crée un espace où chaque style peut s'exprimer authentiquement. Les décisions reflètent ainsi les vraies positions de tous les membres, pas seulement de ceux qui s'expriment aisément en public.`,
+},
+
+{ id:"P-034", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Votre Product Owner est constamment indisponible — il répond aux emails en moyenne après 3 jours, manque 40 % des sprint plannings et les user stories arrivent sans critères d'acceptation. L'équipe avance en faisant ses propres suppositions, créant un taux de reprise élevé. Comment résolvez-vous ce problème structurel ?`,
+  options:[
+    `A. Continuer à travailler avec les suppositions de l'équipe — le PO est responsable des conséquences de son indisponibilité.`,
+    `B. Documenter l'impact concret de l'indisponibilité du PO (taux de reprise, vélocité réduite, stories non livrables) et présenter cette analyse au sponsor ou au management du PO pour obtenir soit une augmentation de la disponibilité du PO, soit la désignation d'un PO délégué ou d'un proxy PO pour les décisions quotidiennes — un PO indisponible est un risque projet critique, pas une contrainte à absorber passivement.`,
+    `C. Prendre vous-même les décisions de priorisation en l'absence du PO — quelqu'un doit décider.`,
+    `D. Réduire la fréquence des sprints à mensuelle pour s'adapter au rythme de disponibilité du PO.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. L'indisponibilité chronique du PO est un dysfonctionnement organisationnel qui compromet la valeur livrée par l'équipe Agile. Le chef de projet/Scrum Master doit escalader ce problème avec des données factuelles (taux de reprise, vélocité, stories non livrables) aux parties prenantes qui peuvent agir. Se substituer au PO (C) crée une confusion des rôles et des responsabilités. Réduire la fréquence des sprints (D) masque le problème sans le résoudre.`,
+},
+
+{ id:"P-035", domaine:"Personnes", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de construction d'une plateforme logistique, votre équipe inclut un expert senior externe (consultant) dont les honoraires sont 3x supérieurs aux employés internes. Cet expert produit un travail de haute qualité mais commence à créer une dépendance — les membres internes cessent de développer leurs propres compétences car "l'expert s'en occupe". Comment gérez-vous cette situation ?`,
+  options:[
+    `A. Accepter la situation — avoir un expert de haut niveau est un avantage compétitif pour le projet.`,
+    `B. Reconnaître le risque de dépendance et restructurer l'engagement de l'expert : le faire travailler en mode mentorat/transfert de compétences (il documente ses méthodes, travaille en binôme avec des membres internes, explique ses décisions) plutôt qu'en mode prestation pure — avec un objectif clair de montée en compétence des équipes internes sur sa durée d'intervention.`,
+    `C. Réduire les heures de l'expert pour forcer les membres internes à prendre en charge le travail.`,
+    `D. Séparer complètement les périmètres : l'expert sur les sujets complexes, les internes sur les sujets simples — sans interaction pour éviter la dépendance.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La dépendance à un consultant externe est un risque de continuité post-projet (ECO T5 — Assurer la formation). La restructuration en mode mentorat maximise la valeur de l'expert (son savoir se multiplie via l'équipe) tout en développant les capacités internes. Réduire brutalement les heures (C) risque de dégrader la qualité sans que les internes soient prêts. La séparation des périmètres (D) perpétue la dépendance.`,
+},
+
+{ id:"P-036", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Lors d'une rétrospective, un membre de l'équipe propose de modifier le processus de déploiement pour réduire les temps de mise en production de 4 heures à 30 minutes. L'idée est techniquement solide mais sa mise en place prendra 2 sprints complets sans livraison de fonctionnalités. Le Product Owner refuse catégoriquement : "2 sprints sans valeur livrée, c'est hors de question". Comment médiez-vous ce conflit ?`,
+  options:[
+    `A. Soutenir le PO — 2 sprints sans livraison de fonctionnalités est un coût trop élevé.`,
+    `B. Faciliter une analyse de retour sur investissement avec les deux parties : 2 sprints investis (6 semaines) pour réduire les déploiements de 4h à 30 min représente un gain de 3h30 par déploiement. Si l'équipe déploie 3 fois par semaine, le ROI est atteint en 6 semaines (30 jours de gains = coût des 2 sprints) ; ensuite chaque déploiement économise 3h30. Présenter cette analyse au PO et lui proposer de répartir l'investissement sur 4 sprints (20 % de capacité/sprint) pour maintenir la livraison de valeur.`,
+    `C. Mettre l'amélioration en attente jusqu'à la fin du projet — c'est une amélioration technique importante mais non urgente.`,
+    `D. Laisser l'équipe mettre en place l'amélioration sans le dire au PO en parallèle du travail normal.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le conflit entre amélioration technique et livraison de valeur est classique en Agile. La médiation efficace passe par la quantification du ROI — transformer un argument qualitatif ("c'est utile") en argument économique ("payé en X semaines, économies de Y ensuite"). La répartition sur 4 sprints à 20 % est un compromis pratique qui maintient la livraison tout en investissant dans l'amélioration. La dissimulation (D) viole la transparence Agile fondamentale.`,
+},
+
+{ id:"P-037", domaine:"Personnes", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet pour la rénovation d'un stade de 45 000 places (78 M€, 30 mois). À mois 18, un accident de travail grave (fracture multiple d'un ouvrier suite à une chute de 4 mètres) se produit sur votre chantier. L'enquête préliminaire révèle que les garde-corps de la zone concernée n'avaient pas été installés conformément au plan de prévention. Quelles sont vos obligations immédiates dans les 24 heures ?`,
+  options:[
+    `A. Continuer les travaux dans les autres zones non concernées par l'accident et attendre les conclusions de l'enquête avant toute action.`,
+    `B. Arrêter immédiatement tous les travaux à risque similaire (travaux en hauteur) jusqu'à audit complet des dispositifs de protection sur l'ensemble du chantier ; déclarer l'accident à l'inspection du travail et à la CPAM dans les délais légaux (24h) ; organiser une réunion d'urgence avec tous les sous-traitants sur les exigences de sécurité ; prendre en charge l'assistance à l'ouvrier blessé ; et informer le maître d'ouvrage de l'incident et des mesures prises.`,
+    `C. Déclarer l'accident aux autorités compétentes et laisser l'enquête suivre son cours sans interrompre les travaux — l'accident est isolé et les autres zones sont conformes.`,
+    `D. Demander au conducteur de travaux de vérifier informellement les garde-corps dans les autres zones avant de reprendre les travaux dès le lendemain.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un accident grave sur chantier déclenche des obligations légales immédiates (déclaration dans les 24h) et des obligations éthiques (arrêt des travaux à risque similaire jusqu'à audit de sécurité complet). Le chef de projet ne peut pas présumer que "les autres zones sont conformes" après une non-conformité grave documentée — un audit systématique est indispensable. La vérification informelle (D) ne satisfait pas les exigences légales post-accident. Continuer sans mesures (A, C) exposerait le projet et ses responsables à des sanctions pénales graves.`,
+},
+
+{ id:"P-038", domaine:"Personnes", approche:"Hybride", type:"standard",
+  question:`Vous êtes chef de programme pour un programme de transformation digitale de 42 M€. Parmi vos 6 chefs de projet de flux, deux ont des styles de management très différents : l'un est très structuré et process-oriented, l'autre est très agile et informel. Les deux produisent d'excellents résultats dans leurs flux respectifs. Cependant, leurs équipes commencent à comparer les pratiques et créent des tensions ("pourquoi eux ils peuvent faire X et pas nous ?"). Comment gérez-vous cette diversité managériale ?`,
+  options:[
+    `A. Uniformiser les pratiques de management sur l'ensemble du programme — la cohérence est indispensable pour éviter les tensions.`,
+    `B. Organiser une session avec les deux chefs de projet pour documenter ensemble les pratiques non négociables du programme (reporting, qualité, communication inter-flux) et les pratiques flexibles (organisation interne des équipes, outils, rituels) — permettre la diversité managériale sur les pratiques flexibles tout en garantissant la cohérence sur les pratiques critiques. Communiquer clairement cette distinction aux équipes.`,
+    `C. Laisser chaque chef de projet gérer son flux indépendamment — les comparaisons entre équipes sont inévitables et sans importance si les résultats sont bons.`,
+    `D. Demander au chef de projet structuré d'assouplir son approche pour se rapprocher du style agile — le management moderne favorise la flexibilité.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La diversité managériale est un atout si elle est gérée consciemment. La distinction entre pratiques non négociables (cohérence programme) et pratiques flexibles (autonomie de management) est la clé. La communication claire de cette distinction aux équipes évite les comparaisons injustes ("pourquoi eux peuvent faire X"). L'uniformisation forcée (A) réduirait l'efficacité des deux chefs de projet en les contraignant à un style qui ne leur correspond pas. Ignorer les tensions (C) les laisse s'amplifier.`,
+},
+
+{ id:"P-039", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Votre équipe Scrum de 7 membres travaille depuis 8 mois ensemble avec une excellente cohésion. Un nouveau manager (votre nouveau N+1) arrive et, lors de sa première semaine, assiste à une rétrospective. Il en ressort avec la conclusion que l'équipe "manque de structure et de discipline" et demande d'introduire des rapports d'activité individuels quotidiens, des objectifs individuels hebdomadaires, et des revues de performance mensuelles individuelles. Comment répondez-vous ?`,
+  options:[
+    `A. Mettre en place immédiatement les mesures demandées — votre nouveau manager a l'autorité hiérarchique et doit être respecté.`,
+    `B. Demander un entretien avec votre nouveau manager pour lui présenter les données de performance de l'équipe (vélocité, taux de satisfaction, qualité des livrables sur 8 mois), expliquer comment les pratiques Agile génèrent ces résultats, et discuter des indicateurs de performance collective qui répondent à ses besoins de visibilité sans dégrader la dynamique d'équipe — proposer un dashboard de performance collective comme alternative aux rapports individuels.`,
+    `C. Ignorer les demandes du manager en espérant qu'il comprendra avec le temps le fonctionnement Agile.`,
+    `D. Demander à l'équipe de s'adapter aux nouvelles pratiques — les exigences managériales font partie des contraintes organisationnelles à intégrer.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un nouveau manager qui impose des pratiques incompatibles avec l'Agile sans comprendre le contexte est une situation à gérer par le dialogue et les données. Les rapports individuels quotidiens et objectifs individuels hebdomadaires dans un contexte Scrum briseraient la responsabilité collective et l'auto-organisation. La présentation des données de performance sur 8 mois est l'argument le plus crédible. Ignorer (C) est irresponsable. L'adaptation immédiate (A, D) sans dialogue sacrifie une équipe performante.`,
+},
+
+{ id:"P-040", domaine:"Personnes", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de déploiement d'un système de gestion hospitalière (18 M€, 28 mois), vous découvrez à mois 15 que deux membres de votre équipe ont un conflit personnel intense issu d'un désaccord hors du contexte professionnel (réseaux sociaux). Ce conflit commence à impacter la qualité de leur collaboration sur les livrables communs. Quelle est votre approche ?`,
+  options:[
+    `A. Séparer physiquement les deux membres en les affectant à des tâches sans interaction — la prévention du conflit est plus efficace que sa résolution.`,
+    `B. Rencontrer chaque personne individuellement pour reconnaître la situation, rappeler que les relations professionnelles exigent un niveau minimum de coopération indépendamment des désaccords personnels, et discuter des modalités de collaboration professionnelle sans exiger une réconciliation personnelle — si la situation impacte les livrables malgré cet effort, envisager une médiation RH formelle.`,
+    `C. Ignorer le conflit tant qu'il ne génère pas de problèmes documentés sur les livrables — interférer dans les relations personnelles dépasse les attributions du chef de projet.`,
+    `D. Demander aux deux membres de résoudre leur désaccord personnel dans les 48 heures ou l'un d'eux sera retiré du projet.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un conflit personnel impactant la qualité du travail professionnel entre dans le périmètre de responsabilité du chef de projet (ECO T1 — Gérer les conflits). La distinction cruciale est de ne pas exiger une réconciliation personnelle mais d'établir un standard minimal de coopération professionnelle. Les rencontres individuelles préalables permettent d'éviter un affrontement en réunion. L'ultimatum (D) sans dialogue est contre-productif. La séparation physique (A) masque le problème sans le résoudre et peut priver l'équipe de collaborations nécessaires.`,
+},
+
+{ id:"P-041", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Votre équipe vient de terminer un PI Planning SAFe très réussi avec des engagements clairs et un Program Board bien construit. À la fin de la session, le directeur général assiste à la présentation des PI Objectives et décide "spontanément" d'ajouter 3 nouvelles fonctionnalités majeures au programme — représentant environ 30 % de capacité supplémentaire — en affirmant que "l'équipe a l'air très motivée et peut sûrement faire plus". Comment répondez-vous dans ce contexte ?`,
+  options:[
+    `A. Accepter les 3 nouvelles fonctionnalités — le DG a l'autorité finale et sa motivation est positive.`,
+    `B. Remercier le DG pour son enthousiasme et expliquer calmement et respectueusement que : les PI Objectives viennent d'être construits sur la base de la capacité réelle des équipes après 2 jours de planification rigoureuse ; ajouter 30 % de charge en fin de session invaliderait les engagements qui viennent d'être pris et la confiance dans le processus ; proposer d'inscrire les 3 fonctionnalités dans le backlog programme pour le prochain PI Planning, ou de remplacer des fonctionnalités de priorité inférieure si elles sont urgentes.`,
+    `C. Faire semblant d'accepter pendant la réunion et réajuster le planning en interne pour maintenir la capacité réelle.`,
+    `D. Demander aux équipes si elles peuvent absorber la charge supplémentaire — si elles disent oui devant le DG, le problème est résolu.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. L'ajout d'un scope non planifié en fin de PI Planning par un DG enthousiaste est un anti-pattern classique qui détruit la crédibilité du processus de planification. Le chef de programme a la responsabilité de protéger l'intégrité du processus tout en restant respectueux de l'autorité du DG. Le processus de PI Planning représente 2 jours d'investissement collectif — le contourner en dernière minute envoie un signal destructeur aux équipes. Faire semblant d'accepter (C) est une forme de dissimulation. Demander aux équipes (D) sous pression hiérarchique garantit un "oui" peu fiable.`,
+},
+
+{ id:"P-042", domaine:"Personnes", approche:"Hybride", type:"standard",
+  question:`Vous gérez un projet de transformation culturelle dans une organisation de 2 000 personnes. Six mois après le lancement, les indicateurs de satisfaction des employés montrent une amélioration de 8 % (objectif : 20 %). En analysant les résultats par département, vous constatez que 3 départements affichent +22 % (dépassant l'objectif) et 4 départements affichent -3 % (détérioration). Comment interprétez-vous et agissez-vous ?`,
+  options:[
+    `A. Consolider les résultats globaux (+8 %) et les présenter positivement — la moyenne est en progression.`,
+    `B. Analyser les facteurs de succès des 3 départements à +22 % (style managérial ? implication des équipes ? nature des changements ?) et les facteurs de détérioration dans les 4 départements à -3 % ; développer une approche différenciée : accélérer dans les départements performants et adapter profondément l'approche dans les départements en régression ; présenter honnêtement la disparité au sponsor avec le plan d'action différencié.`,
+    `C. Concentrer tous les efforts sur les 4 départements en régression en retirant les ressources des départements performants — ils n'ont plus besoin de soutien.`,
+    `D. Revoir la méthode de mesure — une variation de -3 % peut être dans la marge d'erreur statistique et ne nécessite pas d'action.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La présentation de la moyenne (+8 %) masquerait une réalité bimodale — des succès significatifs et des échecs réels dans d'autres départements. L'analyse différenciée des facteurs de succès et d'échec est précieuse : les 3 départements à +22 % sont des laboratoires de bonnes pratiques. Retirer les ressources des départements performants (C) risque de faire régresser leurs gains. Une détérioration de -3 % dans 4 départements n'est pas dans la marge d'erreur — c'est un signal de résistance ou d'inadaptation de l'approche.`,
+},
+
+{ id:"P-043", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Votre équipe Scrum développe un produit depuis 12 mois. Les 3 membres fondateurs de l'équipe ont développé une culture forte et des pratiques bien rodées. L'organisation décide d'intégrer votre équipe dans une équipe plus grande (fusion de 3 équipes en une équipe de 18 personnes) pour travailler sur un programme plus ambitieux. Comment gérez-vous la préservation de la culture positive tout en facilitant l'intégration ?`,
+  options:[
+    `A. Dissoudre complètement l'ancienne structure et recréer une nouvelle équipe à partir de zéro — les anciennes cultures peuvent créer des clans dans la nouvelle équipe.`,
+    `B. Documenter explicitement les pratiques et valeurs qui ont fait le succès de l'ancienne équipe (comment vous prenez les décisions, comment vous gérez les conflits, comment vous définissez la qualité) ; organiser une session de co-construction de la nouvelle équipe où les 3 équipes fusionnées contribuent à définir ensemble les nouvelles pratiques — en partant de ce qui a fonctionné dans chacune, pas en imposant une culture ; les membres fondateurs peuvent devenir des ambassadeurs des bonnes pratiques, pas des gardiens d'une culture exclusive.`,
+    `C. Maintenir les 3 équipes distinctes au sein de la grande équipe avec leurs propres pratiques — la fusion n'implique pas l'homogénéisation.`,
+    `D. Laisser la culture émerger naturellement de la nouvelle équipe sans intervention — forcer la culture crée de la résistance.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La fusion d'équipes est l'un des changements les plus délicats en Agile — elle remet à zéro le développement de l'équipe (modèle de Tuckman). La documentation des pratiques réussies et la co-construction d'une nouvelle culture intégrant le meilleur de chaque équipe est la stratégie optimale. Les membres fondateurs comme ambassadeurs (pas comme gardiens exclusifs) valorisent leur expérience sans créer de clans. La dissolution totale (A) perd une culture précieuse construite sur 12 mois. Maintenir 3 sous-équipes distinctes (C) empêche la vraie fusion.`,
+},
+
+{ id:"P-044", domaine:"Personnes", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de mise en place d'un système de contrôle qualité dans une usine de composants aéronautiques (14 M€, 22 mois), votre responsable tests découvre que des pièces déjà validées et livrées au client (Airbus) présentent potentiellement une non-conformité sur un paramètre de résistance thermique. Les données sont encore incertaines (probabilité estimée à 40 % que la non-conformité soit réelle). Airbus n'est pas encore au courant. Comment gérez-vous cette situation ?`,
+  options:[
+    `A. Attendre les résultats des tests de confirmation avant de contacter Airbus — informer d'une non-conformité incertaine créerait une alarme injustifiée.`,
+    `B. Informer immédiatement Airbus de la situation telle qu'elle est : des données préliminaires indiquent une possible non-conformité sur le paramètre X avec une probabilité estimée de 40 % ; des tests de confirmation sont en cours (délai : X jours) ; des mesures conservatoires sont envisageables (blocage de l'utilisation des pièces concernées jusqu'à confirmation) — la décision de l'action conservatoire appartient à Airbus. Dans l'aéronautique, informer tardivement d'une non-conformité potentielle sur des pièces en service est une faute grave.`,
+    `C. Lancer les tests de confirmation en urgence et n'informer Airbus que si la non-conformité est confirmée — éviter les fausses alarmes préserve la relation commerciale.`,
+    `D. Consulter d'abord votre service juridique pour évaluer les responsabilités avant d'informer Airbus — une communication prématurée pourrait être utilisée contre vous en cas de litige.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Dans l'aéronautique (secteur à sécurité critique), les obligations de traçabilité et de notification des non-conformités potentielles sont réglementairement strictes — même avec une probabilité de 40 %, Airbus doit être informé immédiatement pour prendre ses propres mesures conservatoires (pièces peuvent être installées sur des avions en service). Attendre la confirmation (A, C) expose à une responsabilité pénale en cas d'incident. Consulter le juridique d'abord (D) ne dispense pas d'informer dans les délais requis — les deux peuvent se faire simultanément.`,
+},
+
+{ id:"P-045", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Vous êtes chef de projet d'une start-up de 25 personnes qui passe d'un fonctionnement informel à l'adoption de pratiques Agile structurées. Le fondateur/CEO (qui est aussi votre sponsor direct) résiste à l'idée de sprint reviews formelles avec les clients : "Nos clients nous font confiance, on n'a pas besoin de leur présenter chaque fonctionnalité". Les deux fois où des sprint reviews ont eu lieu, le CEO est intervenu pour minimiser les feedbacks négatifs des clients. Comment abordez-vous cette situation ?`,
+  options:[
+    `A. Respecter la position du CEO — dans une start-up, la relation client directe du fondateur est un avantage compétitif à préserver.`,
+    `B. Avoir une conversation directe avec le CEO sur la valeur des sprint reviews : les feedbacks clients négatifs sont précisément les plus précieux car ils évitent de construire la mauvaise chose ; les minimiser revient à se priver de l'information la plus critique. Proposer d'expérimenter 3 sprint reviews avec un protocole clair (le CEO présente mais s'engage à ne pas filtrer les retours) et de mesurer l'impact sur la satisfaction client et la qualité du produit.`,
+    `C. Organiser des sprint reviews sans inviter le CEO pour éviter l'interférence.`,
+    `D. Accepter de remplacer les sprint reviews par des démonstrations informelles sans feedback structuré — l'adaptation au contexte start-up est nécessaire.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le comportement du CEO (minimiser les feedbacks négatifs) est contre-productif — il prive l'équipe de l'information la plus précieuse pour construire le bon produit. La conversation directe sur la valeur des feedbacks négatifs est nécessaire, assortie d'une proposition expérimentale avec métriques. Les sprint reviews sans le CEO (C) crée un conflit de gouvernance. L'abandon des reviews structurées (D) prive l'équipe d'un mécanisme fondamental de validation de la valeur.`,
+},
+
+{ id:"P-046", domaine:"Personnes", approche:"Prédictif", type:"standard",
+  question:`Vous gérez un projet d'infrastructure critique pour une ville (système d'alerte aux inondations, 8,5 M€, 20 mois). À mois 16, vous réalisez que le système ne pourra pas atteindre le temps de réponse garanti de 90 secondes (du déclenchement de l'alerte à la notification des habitants) — les tests montrent 140 secondes dans les conditions réelles. Modifier l'architecture pour atteindre 90 secondes nécessite 6 mois supplémentaires et 1,2 M€. La saison des crues commence dans 4 mois. Comment gérez-vous cette situation critique ?`,
+  options:[
+    `A. Livrer le système à 140 secondes dans les délais prévus — c'est mieux que rien et la ville peut communiquer sur cette limitation.`,
+    `B. Informer immédiatement la ville (client) et les autorités compétentes de la situation réelle ; présenter les options : (1) livraison partielle dans 4 mois du système à 140 secondes avec protocoles compensatoires (alertes précoces, redondance avec d'autres canaux), (2) extension de 6 mois pour atteindre les 90 secondes garantis, (3) combinaison des deux (livraison partielle + amélioration post-saison). Travailler avec les autorités de gestion des crises pour évaluer si 140 secondes est acceptable avec des protocoles adaptés, ou si le risque est inacceptable. La transparence est obligatoire — un système d'alerte livré avec une performance non conforme à la spec sans le signaler serait une faute grave.`,
+    `C. Modifier discrètement la spécification contractuelle de 90 à 150 secondes pour que le système soit "conforme" à la livraison.`,
+    `D. Livrer le système à 140 secondes sans mentionner l'écart avec la spec — la ville pourra identifier le problème lors des tests d'acceptation.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un système d'alerte aux inondations est un système à sécurité critique — une performance dégradée de 56 % sur le temps de réponse (140s vs 90s) peut avoir des conséquences vitales. La transparence immédiate avec le client et les autorités de gestion des crises est une obligation légale et éthique absolue. Les autorités peuvent évaluer si 140 secondes est acceptable avec des protocoles compensatoires — c'est leur décision, pas celle du chef de projet. La modification discrète de la spec (C) est une fraude contractuelle. Livrer sans signaler (D) dissimule un écart critique.`,
+},
+
+{ id:"P-047", domaine:"Personnes", approche:"Hybride", type:"standard",
+  question:`Vous êtes chef de projet pour le développement d'une application RH dans une entreprise. Lors d'une réunion de validation, le directeur des ressources humaines (votre principal sponsor) vous demande d'ajouter une fonctionnalité permettant aux managers de consulter les communications privées des employés sur la messagerie interne de l'entreprise "pour détecter les problèmes d'ambiance". La fonctionnalité est techniquement réalisable en 2 sprints. Comment répondez-vous ?`,
+  options:[
+    `A. Développer la fonctionnalité — la messagerie interne de l'entreprise appartient à l'entreprise et le DRH a l'autorité.`,
+    `B. Expliquer au DRH que cette fonctionnalité soulève des problèmes légaux sérieux (le RGPD et les droits du travail dans la plupart des pays encadrent strictement la surveillance des communications des employés, même sur les outils de l'entreprise, et exigent consultation des représentants du personnel et base légale explicite) et des risques majeurs de confiance organisationnelle ; recommander de consulter le DPO et le service juridique avant toute décision, et proposer des alternatives légales pour détecter les problèmes d'ambiance (enquêtes anonymes, entretiens managériaux structurés, indicateurs RH de bien-être).`,
+    `C. Développer la fonctionnalité avec un accès réservé au DRH uniquement — limiter l'accès réduit le risque.`,
+    `D. Soumettre la demande au comité de direction pour validation — une décision aussi sensible doit être approuvée au plus haut niveau.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La surveillance des communications privées des employés est strictement réglementée — le RGPD, la jurisprudence des droits du travail (arrêts Nikon en France, CEDH) et les législations équivalentes dans la plupart des pays imposent des conditions très strictes. Développer la fonctionnalité sans analyse juridique préalable (A, C) exposerait l'entreprise à des sanctions légales graves et détruirait la confiance des employés. Le DPO et le service juridique sont les interlocuteurs appropriés avant toute décision. Les alternatives légales proposées répondent au besoin réel (détecter les problèmes d'ambiance) sans risque légal.`,
+},
+
+{ id:"P-048", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Dans votre équipe Scrum, vous introduisez la pratique du "pair programming" pour améliorer la qualité du code. Après 3 sprints, les données montrent que la vélocité a légèrement baissé (-8 %) mais le taux de défauts post-sprint a chuté de 42 %. Deux développeurs seniors résistent fortement : "On perd du temps à expliquer ce qu'on fait à des juniors". Comment consolidez-vous cette pratique ?`,
+  options:[
+    `A. Supprimer le pair programming à la demande des seniors — leur résistance impacte le moral et ils sont les membres les plus productifs.`,
+    `B. Présenter les données en rétrospective : -8 % de vélocité mais -42 % de défauts représente un gain net significatif (le coût de correction des défauts post-sprint est généralement 3-5x supérieur au coût de prévention). Aborder directement la préoccupation des seniors : "expliquer ce qu'on fait à des juniors" EST la valeur du pair programming (transfert de compétences, résilience de l'équipe, meilleure qualité) ; proposer de varier les paires (seniors entre eux sur les sujets complexes, mixtes sur les autres) pour maximiser les bénéfices.`,
+    `C. Rendre le pair programming optionnel — forcer une pratique contre la volonté des membres clés est contre-productif.`,
+    `D. Séparer les seniors des juniors pour les sessions de pair programming — les seniors travaillent ensemble et les juniors entre eux.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La résistance des seniors est compréhensible mais repose sur une perception incorrecte du coût-bénéfice. Les données sont éloquentes : -8 % de vélocité vs -42 % de défauts est un ROI clairement positif (les corrections de défauts post-sprint coûtent bien plus que la baisse de vélocité apparente). La présentation des données en rétrospective est une approche factuelle et non confrontationnelle. Varier les paires (seniors entre eux sur les sujets complexes) répond à la préoccupation de "perdre du temps à expliquer" sans supprimer les bénéfices du pair programming.`,
+},
+
+{ id:"P-049", domaine:"Personnes", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet pour un programme de transformation RH (5,2 M€, 18 mois). Lors d'une réunion de comité de pilotage, le DG annonce qu'un concurrent vient de lancer un produit similaire et demande de "tout accélérer" pour terminer en 12 mois au lieu de 18 — soit une réduction de 33 % du délai. Sans budget supplémentaire. Comment répondez-vous à cette pression ?`,
+  options:[
+    `A. Accepter la nouvelle date de 12 mois et reorganiser le projet en conséquence — la réactivité compétitive est une priorité stratégique.`,
+    `B. Demander 48 heures pour réaliser une analyse d'impact rigoureuse de la réduction de délai de 33 % : quelles fonctionnalités peuvent être livrées en 12 mois à ressources constantes ? quel est le périmètre minimum viable qui répond à l'urgence compétitive ? quels sont les risques qualité d'une telle compression ? Présenter au DG 3 scénarios (12 mois périmètre réduit, 15 mois périmètre intermédiaire, 18 mois périmètre complet) avec les implications de chacun — et lui permettre de décider sur la base de données réelles, pas d'une promesse irréaliste.`,
+    `C. Expliquer au DG que réduire le délai de 33 % sans budget supplémentaire est techniquement impossible et qu'il faut maintenir le plan initial.`,
+    `D. Accepter verbalement les 12 mois et continuer le plan initial en espérant que la pression concurrentielle se dissipe.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Face à une pression de compression calendaire drastique (-33 %), la réponse professionnelle est l'analyse d'impact rapide et la présentation d'options réalistes — pas l'acceptation aveugle ni le refus catégorique. Les 48 heures demandées sont un délai raisonnable pour une analyse sérieuse. Les 3 scénarios permettent au DG de prendre une décision éclairée sur le compromis périmètre/délai. Accepter sans analyse (A) ou verbalement sans intention (D) sont des formes de manque d'intégrité professionnelle. Le refus catégorique (C) ferme le dialogue sans proposer d'alternative constructive.`,
+},
+
+{ id:"P-050", domaine:"Personnes", approche:"Agile", type:"standard",
+  question:`Vous êtes Scrum Master et vous constatez que lors des mêlées quotidiennes, les membres de l'équipe répondent mécaniquement aux 3 questions (fait hier, prévu aujourd'hui, blocages) mais que la réunion ne génère pas de vraie coordination — les membres ne réagissent pas aux informations des autres et se contentent de "reporter". La mêlée dure 15 minutes au lieu de 15 et n'a pas de valeur réelle. Comment améliorez-vous cette pratique ?`,
+  options:[
+    `A. Supprimer les mêlées quotidiennes — si elles ne créent pas de valeur, elles sont une perte de temps.`,
+    `B. Changer le format de la mêlée pour recentrer sur la collaboration : remplacer les 3 questions individuelles par une revue collective du sprint board (quelles stories avancent, lesquelles sont bloquées, quelles dépendances doivent être adressées aujourd'hui) ; debout devant le board physique ou virtuel ; timeboxer à 10 minutes maximum ; former les membres à poser des questions aux autres ("tu as dit que X bloque — qui peut t'aider ?") — la mêlée est une réunion de coordination, pas un rapport individuel au Scrum Master.`,
+    `C. Rendre les mêlées hebdomadaires au lieu de quotidiennes — la fréquence réduite augmentera la densité d'information utile.`,
+    `D. Imposer une règle : chaque mêlée doit générer au minimum 1 action collaborative identifiée — cela forcera la vraie coordination.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La mêlée mécanique (3 questions individuelles = rapport au Scrum Master) est un anti-pattern classique. La mêlée est conçue pour l'équipe, pas pour le Scrum Master. Recentrer sur le sprint board (ce qui avance, ce qui bloque, les dépendances) transforme la mêlée en outil de coordination réelle. Former les membres à poser des questions aux autres change la dynamique de "rapport" à "coordination". La mêlée hebdomadaire (C) est un autre anti-pattern. La règle imposée (D) peut créer une coordination artificielle sans valeur réelle.`,
+},,
+// ── Questions supplémentaires Processus ──
+{ id:"PR-031", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de construction d'un pont autoroutier (125 M€, 48 mois), l'analyse de Monte Carlo réalisée à mois 6 donne : P10 = 44 mois, P50 = 51 mois, P90 = 58 mois, pour un délai contractuel de 48 mois. La réserve pour aléas représente 6 mois. Quelle est votre analyse de la situation et votre recommandation au comité de pilotage ?`,
+  options:[
+    `A. La situation est sous contrôle — la réserve de 6 mois compense exactement l'écart P50 (51 - 48 = 3 mois) et nous avons une marge confortable.`,
+    `B. La situation est préoccupante : le P50 est déjà à 51 mois (3 mois au-delà du contractuel), et il y a 50 % de probabilité de dépasser 51 mois. Même avec 6 mois de réserve, la probabilité de terminer dans les 48 mois contractuels est d'environ 10 % (P10 = 44 mois). Recommander au comité d'identifier immédiatement les opportunités de compression sur le chemin critique, et de préparer une analyse de scénario de renégociation partielle du délai contractuel — le contrat à 48 mois a 90 % de chances de ne pas être tenu à ressources constantes.`,
+    `C. Utiliser les 6 mois de réserve comme tampon suffisant — P50 de 51 mois + réserve de 6 mois = livraison possible à 57 mois.`,
+    `D. Attendre les données du mois 12 avant d'alerter — l'analyse de Monte Carlo à mois 6 est trop précoce pour être significative.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. L'analyse de Monte Carlo révèle que la probabilité de livraison à 48 mois est d'environ 10 % — c'est un signal d'alarme critique, pas une situation sous contrôle. La réserve de 6 mois est indépendante de la distribution probabiliste et ne "compense" pas le P50 de 51 mois. Recommander une analyse de compression du chemin critique et envisager une renégociation précoce du délai contractuel est la démarche professionnelle responsable. Attendre (D) à mois 12 réduirait encore les options disponibles.`,
+},
+
+{ id:"PR-032", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Vous gérez le développement d'une application de commerce électronique. Le Black Friday approche dans 8 semaines et représente 35 % du chiffre d'affaires annuel du client. Votre équipe Scrum est au sprint 14 et il manque encore 3 fonctionnalités critiques pour le Black Friday. Votre vélocité actuelle permet de livrer 2 fonctionnalités en 8 semaines (4 sprints). Il manque donc 1 fonctionnalité. Options : (O1) Ajouter 2 développeurs (coût 40 000 €, intégration 2 semaines) ; (O2) Réduire la qualité (tests raccourcis, dette technique accumulée) ; (O3) Simplifier la 3ème fonctionnalité à une version minimale viable. Recommandez.`,
+  options:[
+    `A. Recommander O1 (ajout de développeurs) — la date Black Friday est non négociable et 40 000 € est minime face à 35 % du CA annuel.`,
+    `B. Recommander O3 (version minimale viable de la 3ème fonctionnalité) en premier lieu : définir avec le client quelle sous-partie de la fonctionnalité apporte 80 % de la valeur business, livrer cette partie en 8 semaines, planifier la version complète pour janvier. Si O3 est impossible (la fonctionnalité est atomique), alors O1 en évaluant le coût total (40 000 € + perte de productivité 2 semaines d'intégration = risque de ne pas livrer malgré le renfort). Exclure O2 — raccourcir les tests avant le Black Friday est le risque le plus dangereux (incidents production pendant l'événement commercial le plus critique de l'année).`,
+    `C. Recommander O2 (tests raccourcis) — les tests complets peuvent être réalisés après le Black Friday ; l'essentiel est de livrer à temps.`,
+    `D. Informer le client qu'il n'est pas possible de livrer les 3 fonctionnalités en 8 semaines à capacité constante et sans compromis qualité — c'est la réalité du planning.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La version minimale viable (O3) est la stratégie Agile optimale : elle maximise la valeur livrée avant la date critique sans risque qualité ni coût supplémentaire. L'option O2 (tests raccourcis) est particulièrement dangereuse avant le Black Friday — un incident de production lors de l'événement commercial le plus chargé de l'année serait catastrophique. L'option O1 (ajout de développeurs) doit être évaluée avec réalisme : 2 semaines d'intégration sur 8 semaines disponibles = seulement 6 semaines de production effective pour les nouveaux membres, avec friction sur la vélocité de l'équipe existante.`,
+},
+
+{ id:"PR-033", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de déploiement d'un réseau fibre optique (34 M€, 30 mois), votre plan de communication prévoit des rapports mensuels au client. À mois 12, le client vous appelle pour vous dire qu'il "apprend des informations importantes sur son propre projet via des tiers (sous-traitants, fournisseurs)" et qu'il se sent "exclu des décisions". L'analyse révèle que vos rapports sont techniques et exhaustifs (45 pages) mais contiennent peu d'informations sur les décisions prises et les orientations choisies. Que faites-vous ?`,
+  options:[
+    `A. Augmenter la fréquence des rapports à la quinzaine — le client a besoin de plus d'information.`,
+    `B. Reconnaître le problème de communication et réviser fondamentalement le plan : distinguer les rapports techniques détaillés (pour les équipes techniques du client) d'un rapport exécutif synthétique mensuel (2 pages maximum : décisions prises ce mois, orientations choisies et pourquoi, prochaines décisions à venir, risques actifs) ; instaurer un appel téléphonique hebdomadaire de 30 minutes pour les décisions en cours ; créer un registre des décisions accessible au client en temps réel.`,
+    `C. Inviter le client à toutes les réunions internes du projet pour qu'il ait accès à toute l'information directement.`,
+    `D. Demander aux sous-traitants de ne plus communiquer directement avec le client — l'information doit passer par un canal unique.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le problème n'est pas la quantité d'information (45 pages/mois) mais sa nature — le client a besoin d'informations décisionnelles, pas techniques. La distinction rapport technique/rapport exécutif et l'appel hebdomadaire pour les décisions en cours répondent précisément au besoin exprimé. Inviter le client à toutes les réunions internes (C) est peu pratique et crée une confusion des rôles. Couper la communication des sous-traitants (D) est impossible à maintenir et crée de la méfiance. Augmenter la fréquence sans changer le contenu (A) aggrave le problème.`,
+},
+
+{ id:"PR-034", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Votre Product Owner souhaite prioriser les user stories selon la technique MoSCoW (Must have, Should have, Could have, Won't have). Après 2 sprints d'utilisation, vous constatez que 85 % des stories sont classées "Must have" et que le backlog de priorité "Must have" représente 18 mois de travail pour une équipe censée livrer en 8 mois. Comment abordez-vous ce problème de priorisation ?`,
+  options:[
+    `A. Accepter la classification MoSCoW du PO — c'est lui qui connaît le mieux les priorités métier.`,
+    `B. Organiser une session de re-priorisation avec le PO en utilisant une technique de contrainte : imposer une limite de 40 % maximum de stories "Must have" (sur la capacité de l'équipe sur 8 mois) et utiliser la technique du "20-dollar test" (chaque partie prenante dispose de 20 points à répartir entre les stories) pour forcer des choix réels entre les Must have. Un backlog où 85 % des items sont "Must have" révèle que la priorisation n'a pas vraiment eu lieu.`,
+    `C. Augmenter la capacité de l'équipe en recrutant pour absorber les 18 mois de stories Must have.`,
+    `D. Expliquer au PO que MoSCoW n'est pas adapté à son projet et lui proposer de classer toutes les stories par ordre de priorité numérique de 1 à N.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un backlog où 85 % des items sont "Must have" avec 18 mois de travail pour 8 mois de capacité révèle une priorisation insuffisante — toutes les fonctionnalités ont été déclarées essentielles sans véritables arbitrages. La technique de contrainte (40 % maximum de Must have) force les vrais choix. Le "20-dollar test" ou techniques équivalentes (WSJF, dot voting) permettent de révéler les vraies priorités relatives quand les déclarations absolues gonflent. Recruter (C) pour absorber 18 mois de backlog non priorisé est une réponse disproportionnée au mauvais problème.`,
+},
+
+{ id:"PR-035", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de rénovation d'un réseau électrique urbain (28 M€, 24 mois), votre analyse des risques identifie un risque de "découverte d'amiante lors des travaux de génie civil" avec probabilité 25 % et impact 450 000 € (décontamination + délai 8 semaines). Votre registre des risques actuel ne prévoit aucune réponse à ce risque. Le directeur technique vous dit "on verra si ça arrive". Comment gérez-vous ce risque ?`,
+  options:[
+    `A. Accepter la position du directeur technique — le risque est à 25 % et si l'amiante n'est pas trouvée, la réserve servira à autre chose.`,
+    `B. Développer un plan de réponse préalable : conduire des sondages préalables de recherche d'amiante dans les zones à risque (coût 15 000 €, délai 3 semaines, réduction de la probabilité à 10 %) ; préparer un contrat cadre avec une entreprise de décontamination spécialisée (activation en 48h si découverte) ; réserver une enveloppe de contingence de 180 000 € (VME = 25 % × 450 k€ = 112 500 € + marge de sécurité) dans la réserve pour aléas ; documenter le protocole de découverte d'amiante et former les équipes de terrain à l'identification visuelle.`,
+    `C. Transférer le risque à l'entrepreneur via une clause contractuelle qui lui fait supporter le coût de la découverte d'amiante.`,
+    `D. Informer le comité de pilotage du risque et demander une décision sur la réponse à y apporter.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. "On verra si ça arrive" est une acceptation passive non préparée qui, si le risque se matérialise, génère une crise (délai 8 semaines non anticipé, surcoût d'urgence, absence de prestataire identifié). L'approche proactive (sondages préalables pour réduire la probabilité, contrat cadre avec un prestataire identifié, réserve de contingence dimensionnée) transforme un risque subi en risque géré. La VME de 112 500 € justifie amplement les 15 000 € de sondages préalables. Le transfert contractuel (C) peut être légitime mais ne dispense pas du plan de réponse.`,
+},
+
+{ id:"PR-036", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Vous gérez le développement d'une application de gestion de patrimoine immobilier. Au sprint 11, un nouveau cadre réglementaire européen sur la transparence immobilière (DPE++) entre en vigueur avec un délai de mise en conformité de 6 mois. Cette réglementation nécessite l'ajout de 3 modules non prévus dans le backlog initial, représentant environ 80 points de story. Votre backlog actuel couvre déjà 2 releases planifiées. Comment intégrez-vous cette contrainte réglementaire ?`,
+  options:[
+    `A. Ajouter les 3 modules réglementaires dans le backlog existant et allonger les releases en conséquence.`,
+    `B. Traiter les 3 modules réglementaires comme Must Have avec deadline fixe (6 mois) : les positionner en tête du backlog produit ; analyser avec le PO quelles fonctionnalités des releases planifiées peuvent être reportées à une release 3 pour libérer la capacité nécessaire ; soumettre une demande de modification formelle au client avec l'analyse d'impact (80 points sur 6 mois = environ 4 sprints de la capacité de l'équipe réaffectés à la conformité réglementaire) ; ne pas "compresser" en espérant livrer tout le backlog initial ET les modules réglementaires — c'est irréaliste.`,
+    `C. Demander au client un budget supplémentaire pour développer les modules réglementaires en plus du périmètre contractuel.`,
+    `D. Développer les modules réglementaires en dehors des sprints (temps libre des développeurs) pour ne pas impacter le backlog planifié.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Une contrainte réglementaire avec deadline fixe est une priorité absolue qui prend le dessus sur les fonctionnalités planifiées. L'approche Agile correcte est de réorganiser le backlog pour intégrer cette priorité, pas de "faire plus" en compressant. La transparence avec le client sur l'impact (fonctionnalités reportées à release 3) est une obligation. Développer hors sprints (D) n'est pas une pratique Agile viable et masque le coût réel de l'effort. L'extension de releases (A) sans analyse d'impact formelle ne gère pas correctement le changement.`,
+},
+
+{ id:"PR-037", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet d'un programme de construction de 3 immeubles résidentiels (85 M€, 36 mois). L'entreprise générale vous soumet une demande de paiement de 2,8 M€ pour "travaux supplémentaires liés aux intempéries exceptionnelles du mois 14". Votre analyse montre que les précipitations du mois 14 étaient effectivement 35 % au-dessus de la moyenne décennale (justifiant potentiellement une force majeure partielle) mais que l'entrepreneur n'a pas envoyé de notification préalable de retard dans les délais contractuels (48h après constatation du fait générateur). Comment traitez-vous cette demande ?`,
+  options:[
+    `A. Rejeter intégralement la demande — l'absence de notification préalable dans les délais contractuels invalide le claim.`,
+    `B. Analyser la situation en distinguant deux aspects : (1) le fond (les intempéries exceptionnelles sont réelles et peuvent légitimement impacter les coûts et délais) ; (2) la forme (l'absence de notification préalable dans les 48h est une violation contractuelle qui affaiblit le claim mais ne l'invalide pas nécessairement selon le droit des contrats applicable). Engager une négociation avec l'entrepreneur : reconnaître les intempéries comme événement exceptionnel documenté, négocier une compensation réduite (par exemple 60-70 % du claim) tenant compte de la violation de procédure, et formaliser un accord de modification avec clause de respect strict des procédures futures.`,
+    `C. Accepter l'intégralité du claim — les intempéries exceptionnelles sont documentées et l'entrepreneur a subi des préjudices réels.`,
+    `D. Demander à l'entrepreneur de soumettre une notification rétroactive dans les 48h et traiter le claim comme s'il avait été soumis à temps.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La gestion des claims contractuels (ECO T5) exige une analyse qui distingue le fond (légitimité du préjudice) de la forme (respect des procédures). Le rejet total (A) peut être contesté si les intempéries constituent un cas de force majeure reconnue — un tribunal donnerait probablement raison à l'entrepreneur sur le fond. L'acceptation totale (C) ne tient pas compte de la violation de procédure qui a privé le maître d'ouvrage de la possibilité de mitiger le préjudice en temps réel. La notification rétroactive (D) est une fiction juridique.`,
+},
+
+{ id:"PR-038", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Vous êtes chef de projet d'une équipe qui développe une plateforme de données pour un groupe industriel. À sprint 7, votre équipe identifie une opportunité d'architecture qui améliorerait significativement les performances et la scalabilité de la plateforme — mais nécessite de refactoriser 30 % du code existant (travail estimé à 3 sprints). Cette opportunité n'était pas prévue et le client n'a pas demandé ces améliorations. Que faites-vous ?`,
+  options:[
+    `A. Refactoriser immédiatement — l'équipe a identifié une opportunité d'amélioration et l'auto-organisation Agile lui donne l'autorité pour prendre cette décision.`,
+    `B. Présenter l'opportunité au Product Owner avec une analyse coût-bénéfice claire : 3 sprints de refactorisation maintenant vs performances/scalabilité insuffisantes dans 12-18 mois quand la charge utilisateur augmentera. Laisser le PO décider en connaissance de cause — si approuvé, créer des stories d'architecture formelles dans le backlog et les prioriser selon la décision du PO. Si refusé, documenter la décision et les risques techniques acceptés.`,
+    `C. Intégrer la refactorisation progressivement (20 % de chaque sprint) sans en informer le PO — la qualité technique est une responsabilité de l'équipe, pas du PO.`,
+    `D. Documenter l'opportunité dans le registre des risques techniques et attendre que les problèmes de performance se matérialisent avant d'agir.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. L'auto-organisation de l'équipe Agile ne signifie pas prendre unilatéralement des décisions qui impactent 3 sprints de travail et le périmètre du produit. La refactorisation architecturale est une décision produit qui appartient au PO, éclairé par l'expertise technique de l'équipe. La présentation de l'analyse coût-bénéfice (3 sprints maintenant vs problèmes futurs) est la contribution correcte de l'équipe. L'intégration discrète (C) viole la transparence Agile. Attendre (D) que les problèmes se matérialisent sera toujours plus coûteux.`,
+},
+
+{ id:"PR-039", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de développement d'un logiciel de gestion portuaire pour l'autorité d'un grand port (22 M€, 30 mois), votre analyse des parties prenantes révèle que le syndicat des dockers (non identifié dans la charte projet initiale) est fortement opposé au projet car il perçoit le nouveau système comme une menace pour l'emploi de ses membres. Le syndicat commence à organiser des réunions avec les utilisateurs finaux du système et à créer de l'opposition. Que faites-vous ?`,
+  options:[
+    `A. Ignorer le syndicat — il n'est pas partie prenante contractuelle du projet et son opposition ne peut pas bloquer légalement le déploiement.`,
+    `B. Identifier le syndicat comme partie prenante à haute influence/haute résistance dans votre registre des parties prenantes ; solliciter une réunion avec les représentants syndicaux pour comprendre leurs préoccupations précises (quels emplois ? quelles modifications de postes ?) ; présenter les données réelles sur l'impact du système sur l'emploi (si aucune suppression de poste n'est prévue, le dire clairement ; si des modifications de postes sont prévues, être honnête sur leur nature) ; proposer de les impliquer dans la définition des formations et du plan d'accompagnement.`,
+    `C. Demander à l'autorité portuaire (votre client) de gérer la relation syndicale — c'est une question de relations sociales qui dépasse les attributions du chef de projet.`,
+    `D. Accélérer le déploiement avant que l'opposition syndicale ne s'organise davantage — un fait accompli est plus facile à gérer que de long débats.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le syndicat est une partie prenante à influence réelle même s'il n'est pas contractuel — son opposition peut retarder ou compromettre l'adoption du système par les dockers, ce qui constitue un risque projet critique. L'engagement proactif (comprendre les préoccupations, présenter les données réelles, proposer une implication dans l'accompagnement) est la stratégie optimale de gestion des parties prenantes (ECO T6 — Engager les parties prenantes). Ignorer (A) ou accélérer (D) aggravent l'opposition. Déléguer entièrement au client (C) est possible mais le chef de projet doit au minimum initier et faciliter le dialogue.`,
+},
+
+{ id:"PR-040", domaine:"Processus", approche:"Hybride", type:"standard",
+  question:`Vous gérez un programme de transformation numérique en mode hybride. Au terme du 3ème trimestre, votre analyse EVM montre IPC-Cal = 0,91 et IPC-C = 1,04. La direction interprète ces chiffres comme "légèrement en retard mais sous le budget — situation acceptable". Êtes-vous d'accord avec cette interprétation et que recommandez-vous ?`,
+  options:[
+    `A. Être d'accord avec la direction — IPC-Cal de 0,91 est légèrement en retard mais IPC-C de 1,04 montre une bonne maîtrise des coûts. La situation est gérable.`,
+    `B. Nuancer l'interprétation : IPC-Cal de 0,91 signifie que pour chaque euro de travail planifié, seulement 0,91 € de valeur a été produite — le retard actuel s'accumule. IPC-C de 1,04 (sous le budget) peut masquer le fait que du travail a été reporté à plus tard, ce qui explique en partie la sous-consommation budgétaire. Calculer l'EAC et l'IEVR (Indice d'Efficience à l'Achèvement) pour évaluer si le rythme actuel permet de terminer dans le budget et le délai. Recommander une revue du planning pour quantifier le retard en semaines et les actions correctives nécessaires.`,
+    `C. Rejeter l'interprétation de la direction — IPC-Cal de 0,91 est un signal grave qui nécessite une action immédiate de compression du planning.`,
+    `D. Attendre le prochain trimestre pour confirmer la tendance avant d'alerter — un seul trimestre est insuffisant pour tirer des conclusions.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. L'interprétation "légèrement en retard mais sous le budget" est une simplification dangereuse. Un IPC-C > 1 combiné à un IPC-Cal < 1 peut signifier que le budget semble maîtrisé simplement parce que du travail planifié n'a pas été réalisé (donc pas dépensé) — pas que l'organisation est efficiente. L'IEVR (aussi appelé TCPI — To Complete Performance Index) permet de calculer la performance nécessaire pour terminer dans le budget restant. La nuance est essentielle pour que le comité de pilotage comprenne la situation réelle et pas une apparence rassurante.`,
+},
+
+{ id:"PR-041", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Vous gérez le développement d'une application de télémédecine. Le sprint 9 se termine et lors de la sprint review, vous réalisez que 3 stories "Done" présentent des bogues critiques découverts par les utilisateurs tests — des bugs qui auraient dû être détectés par les tests de régression automatisés. Investigation : les tests automatisés ont bien été exécutés mais n'ont pas détecté ces bugs car les cas de test correspondants n'avaient pas été écrits. Quelle est votre action ?`,
+  options:[
+    `A. Retirer les 3 stories de la Définition de Fini et les remettre dans le sprint backlog du prochain sprint — elles ne sont pas réellement terminées.`,
+    `B. Remettre les 3 stories en "In Progress" pour correction immédiate, mais surtout analyser la cause profonde : pourquoi les cas de test n'ont-ils pas été écrits ? (définition de prêt insuffisante sur les critères d'acceptation testables ? pression de vélocité qui a conduit à des raccourcis sur les tests ? manque de compétences QA ?) ; renforcer la Définition de Fini pour inclure une couverture minimale de tests de régression sur les nouvelles fonctionnalités ; et traiter cela comme un apprentissage systémique en rétrospective.`,
+    `C. Accepter les 3 stories comme "Done" avec des bugs connus et créer des stories de correction dans le backlog — cette pratique est standard dans le développement logiciel.`,
+    `D. Demander à l'équipe QA de re-tester manuellement toutes les fonctionnalités développées depuis le sprint 1 pour identifier les autres bugs potentiels.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Des bugs critiques post-sprint-review révèlent un problème systémique dans le processus de test, pas juste 3 stories à corriger. La cause profonde (cas de test non écrits) doit être analysée et la Définition de Fini renforcée pour prévenir la récurrence. Accepter des stories "Done" avec bugs critiques (C) est un anti-pattern qui accumule la dette de qualité. Re-tester manuellement depuis le sprint 1 (D) est disproportionné et non systématique. Le retour en "In Progress" (A) est correct opérationnellement mais insuffisant sans l'analyse de la cause profonde.`,
+},
+
+{ id:"PR-042", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet pour la mise en place d'une plateforme de e-learning pour 12 000 employés d'un groupe industriel. Le projet est à 4 semaines de la mise en production. Un test de charge révèle que la plateforme ne supporte que 800 connexions simultanées, alors que les pics d'utilisation prévus sont de 2 400 connexions simultanées. Le prestataire technique estime qu'une correction complète nécessitera 8 semaines. Le DRH (sponsor) veut maintenir la date de lancement car "les formations ont déjà été planifiées et les managers informés". Comment gérez-vous cette situation ?`,
+  options:[
+    `A. Lancer la plateforme à la date prévue en limitant le nombre de connexions simultanées à 800 — les utilisateurs qui ne peuvent pas se connecter essaieront plus tard.`,
+    `B. Présenter au DRH une analyse factuelle : lancer une plateforme qui tombera en panne pendant les pics d'utilisation crée un impact de réputation du projet (12 000 employés frustrés dès le jour 1) bien supérieur à un report de 8 semaines. Proposer des alternatives : (1) lancement en accès progressif (groupes de 800 utilisateurs par plage horaire planifiée, étalé sur 3 semaines le temps de la correction) ; (2) report de 6 semaines avec communication proactive aux managers sur la raison et la nouvelle date ; (3) lancement avec module pilote (sous-ensemble de formations peu critiques) pour maintenir la visibilité tout en corrigeant l'infrastructure.`,
+    `C. Accepter la date de lancement et espérer que les 2 400 connexions simultanées ne se produiront pas réellement au même moment.`,
+    `D. Demander au prestataire de compresser la correction de 8 à 4 semaines en doublant les ressources — coûteux mais nécessaire.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Lancer une plateforme qui ne supporte pas les charges prévues est une décision technique désastreuse — les pannes lors du lancement créent une impression négative durable difficile à corriger. La présentation des options (accès progressif, report, pilote) donne au DRH des alternatives réelles sans le confronter à un simple "impossible". L'accès progressif par groupes de 800 est souvent la meilleure solution : maintient la date de lancement pour les premiers groupes tout que la correction est en cours. La compression (D) de 8 à 4 semaines peut dégrader la qualité de la correction elle-même.`,
+},
+
+{ id:"PR-043", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Vous êtes Scrum Master d'une équipe qui a livré 6 sprints consécutifs sans incident. Le CEO de votre startup assiste à la rétrospective du sprint 7 et, face aux 2 points d'amélioration identifiés par l'équipe (amélioration du processus de code review et du format du sprint planning), il dit : "Si vous avez des choses à améliorer, c'est que vous n'êtes pas encore performants. Une vraie équipe Agile ne devrait plus avoir de problèmes à améliorer." Comment répondez-vous ?`,
+  options:[
+    `A. Accepter la vision du CEO — une équipe mature ne devrait effectivement plus avoir de problèmes majeurs à résoudre.`,
+    `B. Expliquer respectueusement au CEO que l'amélioration continue est un principe fondamental de l'Agile, pas un symptôme de sous-performance : une équipe qui n'identifie plus rien à améliorer est soit une équipe qui a atteint la perfection absolue (impossible), soit une équipe qui a cessé de chercher à s'améliorer (inquiétant). Les 2 points identifiés révèlent une équipe mature capable d'auto-réflexion — c'est exactement ce que le Manifeste Agile prescrit. Les équipes les plus performantes en Agile (Netflix, Spotify) ont des rétrospectives riches en points d'amélioration.`,
+    `C. Supprimer les points d'amélioration de la présentation future pour éviter que le CEO tire de mauvaises conclusions.`,
+    `D. Demander au CEO de ne plus assister aux rétrospectives — sa présence inhibe la liberté de parole de l'équipe.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La conception du CEO selon laquelle "améliorer = sous-performance" est une incompréhension fondamentale de l'Agile. L'amélioration continue (Kaizen) est un principe explicite du Manifeste Agile — une équipe mature identifie et traite les opportunités d'amélioration avec précision, même sur des sujets fins. L'explication respectueuse avec des exemples concrets (Netflix, Spotify) est plus efficace qu'une confrontation. Supprimer les points d'amélioration (C) sacrifie la transparence. Exclure le CEO (D) crée un conflit de gouvernance potentiellement dommageable.`,
+},
+
+{ id:"PR-044", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Dans un projet de réhabilitation d'un réseau d'assainissement urbain (19 M€, 26 mois), votre planning de référence prévoit le remplacement séquentiel de 8 collecteurs principaux. À mois 8, une analyse révèle qu'il serait techniquement possible de travailler sur 2 collecteurs simultanément au lieu de 1, ce qui pourrait économiser 4 mois sur la durée totale du projet. Le coût supplémentaire de simultanéité est estimé à 380 000 €. La pénalité d'extension au-delà du délai contractuel est de 45 000 €/semaine. Comment évaluez-vous et présentez-vous cette opportunité ?`,
+  options:[
+    `A. Mettre en œuvre la simultanéité immédiatement — 4 mois d'économie justifient clairement 380 000 € d'investissement.`,
+    `B. Calculer l'analyse coût-bénéfice complète avant de recommander : économie de délai = 4 mois = 16 semaines. Bénéfice direct (évitement de pénalité si le projet est en retard) = 0 à 720 000 € selon le risque actuel de retard. Bénéfice indirect = livraison anticipée de 4 mois pour les citoyens et la ville. Coût = 380 000 €. Si la probabilité actuelle de retard est > 53 % (380 000 / 720 000), la simultanéité est recommandée même sans risque de retard. Présenter l'analyse au comité de pilotage comme une demande de modification formelle avec l'analyse coût-bénéfice complète.`,
+    `C. Ne pas recommander la simultanéité — le planning de référence a été approuvé et les modifications non planifiées sont à éviter.`,
+    `D. Recommander la simultanéité uniquement sur les collecteurs les moins complexes pour limiter les risques d'interférences entre chantiers.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Une opportunité de compression (fast-tracking naturel via simultanéité) doit être évaluée rigoureusement avant recommandation. L'analyse coût-bénéfice montre que même sans risque de retard, l'investissement de 380 000 € pour économiser 4 mois peut être justifié par la valeur de la livraison anticipée pour les citoyens et la ville (réduction des nuisances). La présentation en demande de modification formelle avec analyse complète est le processus correct. La mise en œuvre immédiate sans analyse (A) ignore les risques de coordination entre chantiers simultanés.`,
+},
+
+{ id:"PR-045", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Vous êtes chef de projet d'une équipe qui développe un système de recommandations musicales. Lors du sprint review du sprint 10, vous présentez la fonctionnalité de playlist automatique. Les utilisateurs testeurs donnent des feedbacks très positifs sur l'ergonomie mais signalent que les recommandations "manquent de diversité" — le système recommande systématiquement le même type de musique. L'algorithme est techniquement correct selon les spécifications initiales mais les spécifications ne capturaient pas ce besoin de diversité. Comment gérez-vous cette situation ?`,
+  options:[
+    `A. Clôturer la story comme "Done" — elle respecte les spécifications initiales. Le besoin de diversité sera traité comme une nouvelle story dans un sprint futur.`,
+    `B. Reconnaître que les spécifications initiales ne capturaient pas un besoin utilisateur réel important ; créer une story de correction haute priorité "Amélioration de la diversité des recommandations" dans le backlog avec le PO ; discuter avec le PO de sa priorité relative par rapport aux autres stories planifiées ; traiter cela comme un apprentissage sur la méthode d'élicitation des besoins (les spécifications fonctionnelles statiques ne capturent pas toujours les besoins subjectifs d'expérience utilisateur — des prototypes testables plus tôt auraient révélé ce besoin).`,
+    `C. Modifier l'algorithme directement dans ce sprint pour intégrer la diversité — l'équipe a identifié l'amélioration nécessaire et peut la livrer rapidement.`,
+    `D. Conclure que le feedback des testeurs est subjectif et non représentatif — les spécifications validées par le PO font foi.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Les sprint reviews servent précisément à révéler les écarts entre ce qui a été spécifié et ce dont les utilisateurs ont réellement besoin. Un feedback convergent sur le "manque de diversité" est un signal utile, pas une opinion subjective à ignorer. La clôture comme "Done" (A) est techniquement correcte mais évite le problème réel. Modifier l'algorithme en cours de sprint (C) sans autorisation du PO ne respecte pas le processus. La leçon sur la méthode d'élicitation (prototypes testables plus tôt pour les besoins subjectifs d'UX) est précieuse pour les sprints futurs.`,
+},
+
+{ id:"PR-046", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Vous gérez un projet de développement d'une centrale solaire flottante (62 M€, 40 mois). À mois 25, votre registre des risques identifie un nouveau risque émergent : l'évolution réglementaire européenne sur les normes d'ancrage des installations flottantes (directive en cours de finalisation) pourrait imposer des modifications structurelles significatives à votre installation en cours de construction. La directive devrait être publiée dans 3 mois mais son contenu exact n'est pas encore connu. Comment gérez-vous ce risque réglementaire émergent ?`,
+  options:[
+    `A. Attendre la publication de la directive dans 3 mois avant d'agir — agir sur un risque incertain gaspille des ressources.`,
+    `B. Mettre en place une veille active : mandater un expert juridique/réglementaire spécialisé en énergie renouvelable pour suivre les travaux de rédaction de la directive et informer dès que le contenu est connu ; analyser les versions préliminaires disponibles (consultations publiques) pour évaluer l'impact potentiel ; identifier les modifications structurelles préventives qui pourraient être intégrées maintenant à faible coût (avant que la construction ne soit trop avancée) vs les modifications coûteuses post-construction ; préparer 2-3 scénarios de réponse selon les configurations possibles de la directive.`,
+    `C. Intégrer des modifications structurelles préventives maximales maintenant pour être sûr d'être conforme quelle que soit la directive finale.`,
+    `D. Informer le client du risque réglementaire et lui demander de prendre la décision sur la réponse à apporter.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un risque réglementaire émergent avec une probabilité significative (directive en cours de finalisation) sur un projet de 62 M€ justifie une veille active et une analyse préventive. L'attente passive (A) peut conduire à des modifications post-construction extrêmement coûteuses si la directive est défavorable. Les modifications préventives maximales (C) sans connaître le contenu de la directive peuvent être coûteuses et inutiles. La préparation de scénarios et l'identification des modifications à faible coût intégrables maintenant permettent de minimiser l'exposition au risque.`,
+},
+
+{ id:"PR-047", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Dans votre équipe Agile qui développe une application mobile de fitness, vous observez que le temps passé à corriger des bugs (bug fixing) représente 38 % de la vélocité totale depuis 5 sprints. Le Product Owner est frustré : "On passe plus de temps à corriger qu'à développer de nouvelles fonctionnalités". L'analyse montre que 70 % des bugs proviennent de 3 modules développés aux sprints 2-4. Comment résolvez-vous ce problème systémique ?`,
+  options:[
+    `A. Allouer 1 sprint complet exclusivement au bug fixing pour éliminer la dette de qualité accumulée.`,
+    `B. Traiter le problème à deux niveaux : (1) Court terme — prioriser la correction des bugs des 3 modules problématiques (70 % des bugs) en sprints dédiés ou en capacity fixe par sprint (20 %) ; (2) Long terme — analyser pourquoi les sprints 2-4 ont généré autant de bugs (tests insuffisants ? spécifications ambiguës ? complexité sous-estimée ?) et renforcer les pratiques qualité (TDD, revues de code plus rigoureuses, critères d'acceptation plus précis) pour éviter que de nouveaux modules ne reproduisent le problème.`,
+    `C. Arrêter le développement de nouvelles fonctionnalités jusqu'à ce que le taux de bugs tombe en dessous de 10 % de la vélocité.`,
+    `D. Créer une équipe dédiée au bug fixing séparée de l'équipe de développement pour paralléliser les deux activités.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. 38 % de la vélocité en bug fixing est un signal systémique qui révèle des pratiques de qualité insuffisantes aux sprints 2-4. La solution à deux niveaux (correction ciblée à court terme + amélioration systémique des pratiques qualité à long terme) est la plus efficace. Un sprint 100 % bug fixing (A) est parfois nécessaire mais ne résout pas les pratiques qui créent des bugs. L'arrêt des nouvelles fonctionnalités (C) est trop radical. Une équipe de bug fixing séparée (D) crée un anti-pattern connu — les développeurs qui créent les bugs ne les corrigent pas, ce qui n'améliore pas les pratiques.`,
+},
+
+{ id:"PR-048", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet pour un programme de déploiement de bornes de recharge électrique pour poids lourds dans 15 aires d'autoroute (48 M€, 36 mois). À mi-programme, votre analyse identifie que 4 des 15 sites présentent des surcoûts importants (+35 % en moyenne) liés à des contraintes électriques inattendues (renforcement du réseau nécessaire), tandis que les 11 autres sites sont dans le budget. Les données EVM globales montrent IPC-C = 0,93 — acceptable en apparence. Comment présentez-vous honnêtement la situation au comité de pilotage ?`,
+  options:[
+    `A. Présenter l'IPC-C global de 0,93 comme indicateur principal — la situation est globalement maîtrisée.`,
+    `B. Présenter une analyse différenciée : IPC-C global = 0,93 (apparemment satisfaisant) masque une réalité bimodale — 11 sites à IPC-C moyen de 1,08 (performants) et 4 sites à IPC-C moyen de 0,65 (en difficulté sévère). La cause des 4 sites problématiques (contraintes électriques inattendues) est systémique — une analyse préventive des 11 sites restants doit vérifier si le même risque existe. Présenter le coût estimé de correction pour les 4 sites et l'impact sur le budget programme si les autres sites présentent des contraintes similaires.`,
+    `C. Ne pas présenter les 4 sites problématiques séparément pour éviter d'alarmer le comité — la situation globale est sous contrôle.`,
+    `D. Attendre que les 4 sites problématiques soient résolus avant le prochain comité pour présenter une situation améliorée.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un IPC-C global de 0,93 qui masque une bimodalité sévère (0,65 sur 4 sites vs 1,08 sur 11 sites) est une présentation trompeuse si elle n'est pas décomposée. Le comité de pilotage ne peut pas exercer sa gouvernance sur la base d'une moyenne qui cache des signaux de risque importants. La cause systémique (contraintes électriques inattendues) sur 4 sites suggère que les 11 sites restants peuvent présenter le même risque — une analyse préventive s'impose. Cacher ou retarder l'information (C, D) viole les obligations de transparence.`,
+},
+
+{ id:"PR-049", domaine:"Processus", approche:"Agile", type:"standard",
+  question:`Votre équipe Scrum développe une application B2B de gestion de contrats. Au sprint 13, lors de la démonstration au client, celui-ci réalise qu'une fonctionnalité importante livrée au sprint 6 (gestion des avenants) fonctionne correctement selon les spécifications mais est "inutilisable dans la pratique" car elle nécessite 14 clics pour une opération que les utilisateurs font 50 fois par jour. Le client demande une refonte de l'ergonomie. Comment traitez-vous cette demande ?`,
+  options:[
+    `A. Refuser la refonte — la fonctionnalité a été livrée et validée selon les spécifications au sprint 6. Une refonte serait un nouveau développement facturable.`,
+    `B. Reconnaître que c'est une situation courante en développement Agile : une fonctionnalité techniquement correcte peut être ergonomiquement insuffisante dans l'usage réel. Créer une story de refonte ergonomique avec le PO, l'évaluer et la prioriser selon son impact business (50 opérations/jour × N utilisateurs = impact significatif) ; dans le futur, inclure des tests d'utilisabilité dans la Définition de Fini pour les fonctionnalités à usage intensif — la responsabilité d'un problème découvert tard est partagée entre le client (qui aurait dû valider l'ergonomie plus tôt) et l'équipe (qui aurait pu proposer des tests d'usabilité).`,
+    `C. Livrer la refonte dans le sprint suivant en priorité absolue — la satisfaction client est primordiale.`,
+    `D. Facturer la refonte comme un nouveau projet — les spécifications ont été respectées et la refonte est une demande nouvelle.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le problème d'ergonomie (14 clics pour une opération fréquente) est un défaut d'utilisabilité découvert tardivement — une situation évitable si des tests d'usabilité avaient été inclus dans la Définition de Fini pour les fonctionnalités à usage intensif. La réponse doit être pragmatique (créer et prioriser la story de refonte) et systémique (améliorer le processus pour éviter la récurrence). La responsabilité est partagée : le client aurait dû valider l'ergonomie plus tôt, l'équipe aurait pu proposer des tests d'usabilité. Le refus catégorique (A) ou la facturation immédiate (D) endommagent la relation client.`,
+},
+
+{ id:"PR-050", domaine:"Processus", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet d'un programme de transformation d'une chaîne hôtelière (12 hôtels, 95 M€, 48 mois). À mois 30, vous réalisez que le projet de rénovation de l'hôtel flagship (Paris, 5 étoiles) a un retard de 8 mois lié à des découvertes archéologiques nécessitant un arrêt pour fouilles préventives (obligation légale). Ce retard impacte l'ouverture pendant la haute saison (Jeux Olympiques prévus), générant une perte de revenus estimée à 4,2 M€. Le retard est hors de votre contrôle (force majeure légale). Comment gérez-vous la communication et les décisions ?`,
+  options:[
+    `A. Informer la direction hôtelière et demander si des alternatives commerciales peuvent compenser pendant la période d'indisponibilité.`,
+    `B. Organiser immédiatement une réunion de crise avec le propriétaire, la direction hôtelière et l'assureur du programme : présenter la situation factuelle (découverte archéologique = arrêt obligatoire légal, durée estimée des fouilles, impact sur le calendrier d'ouverture), analyser les options (accélération post-fouilles pour récupérer partiellement le retard, ouverture partielle de l'hôtel pendant les travaux restants, plan commercial alternatif pendant la période de fermeture), activer les clauses d'assurance pour force majeure, et notifier les autorités du patrimoine archéologique selon les obligations légales.`,
+    `C. Chercher à minimiser la durée des fouilles en négociant avec les archéologues pour accélérer leur travail.`,
+    `D. Reprendre les travaux de rénovation dans les zones non archéologiques pour minimiser l'impact sur le planning global.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Une découverte archéologique est une force majeure légale qui déclenche des obligations multiples : légales (notification des autorités du patrimoine, arrêt des travaux dans la zone), contractuelles (activation des clauses de force majeure avec l'assureur), commerciales (alternatives pour la période d'indisponibilité) et de communication (transparence immédiate avec le propriétaire et la direction hôtelière). La perte de 4,2 M€ pendant les JO est un enjeu financier majeur qui nécessite une réunion de crise, pas une communication incrémentale. Négocier avec les archéologues (C) pour accélérer des fouilles réglementées est non réaliste.`,
+},,
+// ── Questions supplémentaires Env. d'affaires ──
+{ id:"EA-016", domaine:"Environnement d'affaires", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet pour la construction d'une usine de traitement des eaux usées dans un pays d'Afrique subsaharienne (22 M€, 28 mois), financée à 60 % par un bailleur international (Banque Mondiale). Lors d'une mission de supervision du bailleur au mois 14, l'auditeur identifie que 3 marchés passés avec des sous-traitants locaux n'ont pas respecté les procédures d'appel d'offres concurrentiel du bailleur. Les marchés ont été attribués directement sans mise en concurrence. Comment gérez-vous cette situation ?`,
+  options:[
+    `A. Expliquer à l'auditeur du bailleur que les règles locales permettent l'attribution directe et que les sous-traitants choisis sont compétents.`,
+    `B. Reconnaître la non-conformité aux procédures du bailleur ; analyser avec le chef comptable et le responsable des marchés les circonstances de ces 3 attributions directes (urgence justifiée ? méconnaissance des procédures ? autre raison ?) ; préparer une explication factuelle et honnête pour le bailleur ; s'engager sur un plan correctif pour les marchés futurs (formation aux procédures d'appel d'offres du bailleur, check-list de conformité avant toute attribution) ; dans le cas où des marchés comparables peuvent encore être mis en concurrence (services en cours), évaluer si une remise en concurrence est possible sans perturbation majeure.`,
+    `C. Demander au bailleur de faire une exception pour ces 3 marchés car les sous-traitants locaux ont été choisis pour soutenir l'économie locale.`,
+    `D. Contacter les sous-traitants pour régulariser rétroactivement les procédures d'attribution.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Les non-conformités aux procédures d'un bailleur international sont des situations sérieuses pouvant entraîner la suspension ou le remboursement des décaissements. La transparence et l'honnêteté avec l'auditeur sont indispensables (Code d'Éthique PMI). L'analyse des causes (méconnaissance des procédures vs abus délibéré) détermine la réponse corrective appropriée. La régularisation rétroactive (D) constitue une falsification de procédure — inacceptable. Invoquer le soutien à l'économie locale (C) ne justifie pas une non-conformité aux procédures contractuelles du bailleur.`,
+},
+
+{ id:"EA-017", domaine:"Environnement d'affaires", approche:"Agile", type:"standard",
+  question:`Votre organisation lance un projet de développement d'une IA de recrutement pour remplacer les pré-sélections manuelles de CV. Le système promet de réduire le temps de pré-sélection de 8h à 20 minutes par poste. Le DRH est enthousiaste. Lors de la phase de test, vous découvrez que l'IA analyse les profils LinkedIn des candidats (sans leur consentement explicite) et intègre des données de réputation sociale pour pondérer le scoring. Quelle est votre position ?`,
+  options:[
+    `A. Déployer le système — l'efficacité de recrutement est l'objectif principal et les données LinkedIn sont publiques.`,
+    `B. Bloquer le déploiement et alerter le DRH et le DPO : l'analyse des profils LinkedIn sans consentement explicit peut constituer une violation du RGPD (traitement de données personnelles sans base légale adéquate pour les décisions de recrutement) ; l'intégration de données de "réputation sociale" dans le scoring de candidats est particulièrement problématique (discrimination potentielle basée sur des données non pertinentes pour l'emploi, biais algorithmiques). Recommander une refonte du système pour utiliser uniquement les données fournies volontairement par les candidats dans leur candidature.`,
+    `C. Modifier les CGU de l'entreprise pour inclure l'analyse des profils LinkedIn des candidats — ainsi le consentement est couvert.`,
+    `D. Informer les candidats lors du processus de candidature que leurs profils sociaux peuvent être analysés — la transparence suffit à légaliser la pratique.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le traitement de données personnelles de candidats sans base légale adéquate constitue une violation du RGPD. L'utilisation de "réputation sociale" dans le scoring de recrutement est doublement problématique : violation de la vie privée et discrimination potentielle (les réseaux sociaux reflètent des facteurs socio-économiques, culturels et familiaux non pertinents pour l'emploi). La modification des CGU (C) ne constitue pas un consentement valide au sens du RGPD pour ce type de traitement. La simple transparence (D) ne suffit pas — la base légale (consentement explicite ou intérêt légitime) doit être valide.`,
+},
+
+{ id:"EA-018", domaine:"Environnement d'affaires", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de programme pour un programme de modernisation des infrastructures d'une ville (180 M€, 5 ans). À mi-programme (année 3), une analyse de réalisation des bénéfices révèle que les économies sur la maintenance attendues (objectif principal du business case) sont de 12 % par rapport au parc existant, alors que le business case initial prévoyait 28 %. L'écart est significatif et modifie le ROI du programme. Quelles sont vos obligations et actions ?`,
+  options:[
+    `A. Continuer le programme sans modifier le business case — les bénéfices réalisés (12 %) restent positifs même s'ils sont inférieurs aux prévisions.`,
+    `B. Analyser les causes de l'écart (hypothèses initiales trop optimistes ? changements de contexte ? problèmes d'implémentation ?) ; mettre à jour formellement le business case avec les projections révisées pour les 2 années restantes ; présenter au comité de pilotage l'analyse complète incluant les options : (1) continuer avec le business case révisé (ROI réduit mais positif), (2) modifier le programme pour maximiser les bénéfices restants, (3) arrêter si le ROI révisé est négatif. La décision appartient aux instances de gouvernance, pas au chef de programme.`,
+    `C. Revisiter les méthodes de mesure des économies — les 12 % peuvent être sous-évalués si la méthode de calcul est incorrecte.`,
+    `D. Compenser les économies de maintenance insuffisantes par d'autres bénéfices non prévus dans le business case initial pour maintenir le ROI apparent.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un écart de 57 % sur les bénéfices projetés (12 % vs 28 %) est un signal critique qui doit être présenté honnêtement aux instances de gouvernance (ECO T3 — Évaluer et livrer les bénéfices). Continuer sans mise à jour du business case (A) prive le comité de pilotage d'informations essentielles pour décider de la poursuite du programme. La manipulation des méthodes de mesure (C) ou la compensation par des bénéfices non prévus (D) constituent des pratiques de dissimulation contraires au Code d'Éthique PMI. Les instances de gouvernance doivent pouvoir décider sur la base d'informations réelles.`,
+},
+
+{ id:"EA-019", domaine:"Environnement d'affaires", approche:"Hybride", type:"standard",
+  question:`Votre organisation gère un portefeuille de 12 projets. Une analyse de portefeuille révèle que 3 projets consomment 45 % des ressources du portefeuille mais ne contribuent qu'à 12 % des bénéfices stratégiques attendus. Ces 3 projets ont tous été lancés par des directeurs très influents et sont considérés comme "intouchables" politiquement. En tant que directeur du PMO, comment abordez-vous cette situation ?`,
+  options:[
+    `A. Éviter de remettre en question ces 3 projets — le capital politique nécessaire est trop élevé et les conséquences de l'affrontement avec ces directeurs sont imprévisibles.`,
+    `B. Préparer une analyse de portefeuille rigoureuse et objective présentant les données pour l'ensemble du portefeuille (pas seulement les 3 projets) : contribution des ressources vs contribution aux bénéfices stratégiques pour chaque projet. Présenter cette analyse au comité de direction (au-dessus des directeurs concernés) dans un contexte de révision stratégique du portefeuille — pas comme une attaque contre des projets spécifiques. Recommander des critères objectifs de priorisation pour l'ensemble du portefeuille et laisser le comité de direction prendre les décisions difficiles sur la base des données.`,
+    `C. Demander à chaque directeur de justifier la contribution stratégique de ses projets — cette démarche les mettra face à leurs responsabilités.`,
+    `D. Réallouer discrètement des ressources des 3 projets vers les projets à plus forte contribution stratégique sans en informer les directeurs concernés.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La gouvernance du portefeuille (ECO T8) exige que les décisions d'allocation des ressources soient basées sur des critères stratégiques objectifs, pas sur l'influence politique. La présentation d'une analyse de portefeuille globale (pas ciblée sur les 3 projets) au comité de direction crée le contexte approprié pour des décisions difficiles. C'est au comité de direction de prendre ces décisions — pas au PMO de les imposer ni de les contourner. La réallocation discrète (D) serait une usurpation de l'autorité de gouvernance.`,
+},
+
+{ id:"EA-020", domaine:"Environnement d'affaires", approche:"Agile", type:"standard",
+  question:`Vous êtes chef de projet pour le développement d'une plateforme de services financiers pour particuliers dans un pays où la réglementation sur les services de paiement évolue rapidement. Lors de votre sprint 12, une nouvelle circulaire réglementaire est publiée qui impose de nouvelles obligations KYC (Know Your Customer) pour tous les services de paiement — avec un délai de mise en conformité de 4 mois. Votre plateforme sera lancée dans 3 mois. Comment intégrez-vous cette contrainte ?`,
+  options:[
+    `A. Lancer la plateforme dans 3 mois comme prévu et mettre en conformité les modules KYC dans les 4 mois suivant le lancement — la circulaire permet 4 mois de délai.`,
+    `B. Analyser précisément les exigences KYC de la circulaire et leur impact sur l'architecture de la plateforme ; évaluer si la conformité peut être atteinte en 3 mois (avant le lancement) — si oui, intégrer immédiatement les requirements KYC dans le backlog prioritaire ; si non, présenter au client les deux options : (1) report du lancement de 4-6 semaines pour être conforme dès le lancement, (2) lancement dans 3 mois avec les fonctionnalités KYC existantes et mise à niveau dans les 4 mois réglementaires. Consulter le service juridique et le régulateur pour confirmer si un lancement non entièrement conforme avec plan de mise en conformité est acceptable.`,
+    `C. Lancer la plateforme dans 3 mois car les 4 mois réglementaires courent à compter de la publication de la circulaire, pas du lancement de la plateforme.`,
+    `D. Retarder le lancement jusqu'à pleine conformité — lancer un service financier avec des lacunes réglementaires est inacceptable.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. La gestion des changements réglementaires (ECO T4 — Évaluer et adresser les changements externes) exige une analyse précise avant de décider. L'interprétation des délais réglementaires (la circulaire s'applique-t-elle aux nouvelles plateformes dès leur lancement ou seulement aux opérateurs existants ?) est une question juridique qui nécessite consultation. La présentation des deux options au client avec les implications de chacune permet une décision éclairée. Lancer non conforme (A, C) sans validation juridique de l'interprétation des délais expose l'organisation à des risques réglementaires.`,
+},
+
+{ id:"EA-021", domaine:"Environnement d'affaires", approche:"Prédictif", type:"standard",
+  question:`Vous êtes directeur de programme pour un programme de transformation digitale de la fonction achat d'un groupe de 45 000 employés (35 M€, 36 mois). À mois 24, le groupe fait l'objet d'une fusion avec un concurrent. La nouvelle direction de la fusion examine tous les programmes en cours et envisage d'arrêter votre programme ("doublon avec le programme équivalent de l'entreprise fusionnée"). Comment gérez-vous cette menace sur votre programme ?`,
+  options:[
+    `A. Continuer le programme normalement jusqu'à une décision formelle de la nouvelle direction — sans décision officielle, le programme doit continuer.`,
+    `B. Prendre l'initiative de préparer un dossier de valeur du programme à mi-parcours : bénéfices déjà réalisés (économies achats, processus améliorés), investissement déjà engagé (24 mois / 35 M€ × ratio avancement), coût d'arrêt vs coût de continuation, analyse comparative avec le programme équivalent de l'entreprise fusionnée (complémentarité vs duplication réelle), et options de synergie possibles (convergence des deux programmes en un seul). Présenter ce dossier proactivement à la nouvelle direction avant qu'une décision soit prise sur la base d'informations incomplètes.`,
+    `C. Mobiliser les commanditaires internes du programme pour faire pression sur la nouvelle direction afin qu'elle maintienne le programme.`,
+    `D. Accélérer le déploiement des composantes les plus visibles du programme pour créer un fait accompli difficile à abandonner.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Face à une menace d'arrêt de programme, la démarche professionnelle est de préparer un dossier de valeur objectif qui aide la nouvelle direction à prendre une décision éclairée — pas de faire de la politique (C) ou de créer des faits accomplis (D). Le dossier doit inclure honnêtement tant les arguments pour la continuation que les options de synergie avec le programme équivalent de la fusion — une décision de convergence des deux programmes peut être une bonne décision pour l'organisation fusionnée. La continuation aveugle (A) sans s'engager dans la réflexion de la nouvelle direction est une erreur stratégique.`,
+},
+
+{ id:"EA-022", domaine:"Environnement d'affaires", approche:"Hybrid", type:"standard",
+  question:`Vous gérez un projet de déploiement d'une solution de supply chain pour un groupe agro-alimentaire. À mois 18 (sur 24 mois), votre analyse de risques identifie un risque critique : votre fournisseur principal de logiciels (qui fournit le composant central de la solution) vient d'annoncer qu'il sera acquis par un concurrent direct de votre client dans les 6 prochains mois. Votre client risque donc de se retrouver dépendant d'un outil dont le développement sera contrôlé par son concurrent. Comment gérez-vous ce risque stratégique ?`,
+  options:[
+    `A. Attendre que la fusion soit finalisée pour évaluer l'impact réel — les intentions du concurrent acquéreur ne sont pas encore connues.`,
+    `B. Alerter immédiatement le client de ce risque stratégique ; analyser les options disponibles : (1) négocier maintenant avec le fournisseur (avant la fusion) des clauses contractuelles protectrices (droits source code en escrow, garanties de continuité de service, clauses de résiliation sans pénalité) ; (2) évaluer les solutions alternatives qui pourraient remplacer le composant central (coût de migration, délai, risque de transition) ; (3) accélérer la finalisation du déploiement pour minimiser la dépendance future ; (4) consulter le service juridique sur les options contractuelles. La décision stratégique appartient au client mais il doit être informé immédiatement.`,
+    `C. Continuer le déploiement comme prévu — la fusion peut ne pas se réaliser et le concurrent peut ne pas modifier les conditions de la solution.`,
+    `D. Proposer immédiatement une migration vers une solution alternative avant la fusion — mieux vaut prévenir.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Une acquisition par un concurrent direct est un risque stratégique majeur pour le client — sa supply chain deviendra dépendante d'un outil contrôlé par son concurrent, ce qui crée des risques de confidentialité des données et de continuité de service. L'alerte immédiate au client (ECO T4 — Évaluer et adresser les changements externes) et la préparation d'options avant la finalisation de la fusion (quand le levier de négociation est encore disponible) sont des actions urgentes. Attendre (A, C) laisse passer la fenêtre d'opportunité pour les clauses contractuelles protectrices.`,
+},
+
+{ id:"EA-023", domaine:"Environnement d'affaires", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet pour la construction d'un complexe hôtelier de luxe dans une zone côtière (68 M€, 36 mois). Six mois avant la livraison prévue, une étude d'impact environnemental commandée par une ONG locale révèle que la construction a endommagé un récif corallien protégé à 200 mètres du site, probablement lors des travaux de fondation offshore. L'étude n'est pas encore publique mais l'ONG vous en a informé de façon préventive avant publication. Quelle est votre réaction ?`,
+  options:[
+    `A. Attendre que l'étude soit publiée officiellement avant d'agir — une étude commandée par une ONG n'a pas de valeur juridique contraignante.`,
+    `B. Prendre la situation au sérieux immédiatement : commander une contre-expertise indépendante pour évaluer l'étendue réelle des dommages ; informer le maître d'ouvrage et le service juridique ; contacter les autorités environnementales compétentes de manière proactive avant que l'étude soit publiée (la proactivité est valorisée par les régulateurs et les tribunaux) ; arrêter tout travail offshore susceptible d'aggraver les dommages ; évaluer les options de remédiation (restauration du récif).`,
+    `C. Mandater un expert en communication de crise pour gérer la relation avec l'ONG et négocier que l'étude ne soit pas publiée.`,
+    `D. Vérifier si les travaux de fondation offshore étaient dans le périmètre des autorisations accordées — si oui, la responsabilité est couverte par les autorisations obtenues.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Un dommage à un récif corallien protégé est une urgence environnementale légale — les récifs coralliens sont protégés par des conventions internationales et des législations nationales strictes. La notification proactive aux autorités avant la publication de l'étude est systématiquement perçue favorablement par les régulateurs (démonstration de bonne foi) vs la découverte via la presse. La remédiation du récif peut être obligatoire et coûteuse, mais retarder l'action aggrave les dommages et la responsabilité. Tenter de bloquer la publication (C) serait un comportement inacceptable éthiquement et juridiquement.`,
+},
+
+{ id:"EA-024", domaine:"Environnement d'affaires", approche:"Agile", type:"standard",
+  question:`Vous êtes chef de programme pour la transformation numérique d'une mutuelle de santé (28 M€, 36 mois). Le programme inclut un projet de migration des données de santé de 840 000 adhérents vers une nouvelle plateforme cloud. Lors des tests de migration, votre équipe découvre que les données de santé de 2 300 adhérents ont été temporairement accessibles à un sous-traitant technique non habilité pendant 4 heures, suite à une erreur de configuration des droits d'accès. Le sous-traitant affirme n'avoir consulté aucune donnée. Comment gérez-vous cet incident ?`,
+  options:[
+    `A. Ne pas notifier car le sous-traitant affirme n'avoir consulté aucune donnée — il n'y a pas de preuve de violation réelle.`,
+    `B. Traiter cet incident comme une violation de données personnelles au sens du RGPD : notifier la CNIL dans les 72 heures (délai légal obligatoire) avec les éléments connus (nature de l'incident, catégories de données concernées, nombre d'adhérents, mesures prises) ; évaluer avec le DPO si les 2 300 adhérents concernés doivent être notifiés individuellement (critères RGPD : risque élevé pour leurs droits et libertés) ; auditer les logs d'accès du sous-traitant pour vérifier s'il y a eu des consultations effectives ; corriger immédiatement la configuration des droits d'accès et renforcer les contrôles.`,
+    `C. Notifier uniquement le DPO interne et ne pas alerter la CNIL — l'incident est limité et gérable en interne sans déclaration officielle.`,
+    `D. Notifier la CNIL uniquement si l'audit des logs confirme que des données ont effectivement été consultées.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Le RGPD définit une violation de données personnelles comme "une violation de la sécurité entraînant la destruction, la perte, l'altération, la divulgation non autorisée ou l'accès non autorisé à des données personnelles" — l'accès non autorisé aux données de santé de 2 300 adhérents pendant 4 heures constitue une violation au sens du RGPD, même si aucune donnée n'a été consultée. La notification à la CNIL dans les 72 heures est une obligation légale, pas une option. Les données de santé sont des données sensibles à protection renforcée (article 9 RGPD). Attendre la confirmation de consultation (D) rate le délai légal de 72 heures.`,
+},
+
+{ id:"EA-025", domaine:"Environnement d'affaires", approche:"Prédictif", type:"standard",
+  question:`Vous êtes chef de projet pour la construction d'une école publique dans une région défavorisée (5,8 M€, 18 mois), financée par l'État et une ONG internationale. À mois 10, les travaux de gros œuvre sont terminés mais les équipements électriques et informatiques, attendus d'un fournisseur européen, ont été bloqués 3 mois aux douanes en raison d'un problème de classification douanière. La livraison est désormais prévue dans 5 semaines seulement avant la date de rentrée scolaire contractuelle. Le contrat prévoit une clause de pénalités pour retard de 30 000 € par semaine après la rentrée. Comment gérez-vous cette situation critique ?`,
+  options:[
+    `A. Attendre la livraison des équipements bloqués en douane et espérer qu'ils arrivent à temps pour la rentrée.`,
+    `B. Mobiliser immédiatement une équipe dédiée à la résolution du blocage douanier (courtier en douane spécialisé, contact avec les autorités douanières, vérification de la classification correcte) ; identifier des fournisseurs locaux ou régionaux alternatifs pour les équipements critiques qui permettraient une livraison dans les 5 semaines si le blocage douanier ne se résout pas dans les 10 jours ; informer le maître d'ouvrage (État et ONG) de la situation et du risque de retard avec les options et leur coût ; documenter la situation comme cas de force majeure partielle (blocage douanier suite à une décision administrative extérieure) pour la gestion des pénalités éventuelles.`,
+    `C. Documenter le blocage douanier comme cas de force majeure et demander une extension automatique du délai contractuel.`,
+    `D. Informer l'ONG que la rentrée scolaire ne pourra pas avoir lieu à la date prévue et proposer une date alternative 8 semaines plus tard.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. Face à un risque de retard critique sur un projet social (école) avec pénalités significatives, la réponse doit être simultanément réactive (résoudre le blocage douanier en urgence) et préventive (identifier des alternatives locales). La force majeure (C) n'est pas automatique — elle doit être qualifiée et acceptée par le maître d'ouvrage, ce qui prend du temps. La résignation (D) sans avoir épuisé les options d'accélération n'est pas acceptable sur un projet d'intérêt public. Attendre passivement (A) laisse filer les semaines sans action.`,
+},
+
+{ id:"EA-026", domaine:"Environnement d'affaires", approche:"Hybride", type:"standard",
+  question:`Vous êtes directeur de programme pour un programme de déploiement de solutions numériques dans un réseau de 200 pharmacies indépendantes (18 M€, 30 mois). À mois 20, une analyse de la réalisation des bénéfices montre que les pharmacies qui ont adopté toutes les fonctionnalités du système (35 % des pharmacies) affichent en moyenne 18 % d'amélioration de leur efficacité opérationnelle (objectif : 15 %). Cependant, 65 % des pharmacies n'utilisent que les fonctionnalités de base et affichent seulement 4 % d'amélioration. Comment analysez-vous et gérez-vous cette situation pour les 10 mois restants ?`,
+  options:[
+    `A. Considérer le programme comme un succès partiel (35 % d'adoption complète avec résultats au-delà des objectifs) et maintenir l'approche actuelle.`,
+    `B. Analyser les facteurs qui différencient les 35 % de pharmacies à adoption complète des 65 % à adoption partielle (formation reçue ? profil du pharmacien ? type de clientèle ? accompagnement local disponible ?) ; développer un plan d'intensification de l'accompagnement ciblé sur les pharmacies à adoption partielle basé sur les facteurs identifiés ; fixer un objectif de 70 % d'adoption complète à la fin du programme ; présenter au comité de pilotage cette analyse et le plan avec les ressources nécessaires (accompagnement additionnel = investissement) et le gain de bénéfices attendu (65 pharmacies passant de 4 % à 12 % d'amélioration = impact significatif sur le bénéfice global du programme).`,
+    `C. Accepter que 35 % d'adoption complète soit le maximum atteignable avec ce type de réseau — les pharmacies indépendantes ne peuvent pas être forcées à adopter des fonctionnalités qu'elles ne souhaitent pas utiliser.`,
+    `D. Considérer les 65 % de pharmacies à adoption partielle comme hors périmètre et concentrer les efforts sur la consolidation et l'expansion chez les 35 % performantes.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. L'écart d'adoption (35 % vs 65 %) révèle que le problème n'est pas le produit (les 35 % à adoption complète dépassent les objectifs) mais l'accompagnement au changement pour les 65 % restants. Comprendre les facteurs différenciateurs (formation, profil, accompagnement) permet de déployer des ressources ciblées pour maximiser les bénéfices dans les 10 mois restants. Accepter (C) ou ignorer (D) les 65 % de pharmacies à faible adoption représente un renoncement à 65 % du potentiel du programme — une décision difficile à justifier devant les financeurs et les pharmacies elles-mêmes.`,
+},
+
+{ id:"EA-027", domaine:"Environnement d'affaires", approche:"Agile", type:"standard",
+  question:`Vous êtes chef de projet pour le développement d'une application de covoiturage destinée aux zones rurales d'Afrique francophone. L'application sera lancée dans 3 pays (Sénégal, Côte d'Ivoire, Maroc). Lors de la phase de test utilisateur dans chaque pays, vous découvrez que les comportements d'utilisation et les fonctionnalités prioritaires diffèrent significativement entre les 3 pays : au Sénégal, les utilisateurs privilégient le paiement en espèces et les groupes WhatsApp pour la coordination ; en Côte d'Ivoire, l'usage du mobile money est dominant ; au Maroc, les utilisateurs attendent des fonctionnalités de notation et de vérification d'identité avancées. Comment adaptez-vous votre product roadmap ?`,
+  options:[
+    `A. Développer un produit unique standardisé pour les 3 pays — la localisation excessive fragmente le produit et augmente les coûts de maintenance.`,
+    `B. Réviser la roadmap pour adopter une architecture core + modules spécifiques par marché : développer un socle commun (géolocalisation, matching conducteur/passager, communication) et des modules pays différenciés (paiement espèces + intégration WhatsApp pour le Sénégal, mobile money pour la Côte d'Ivoire, notation avancée + vérification identité pour le Maroc) ; prioriser le lancement dans le pays le plus mature (Maroc pour les fonctionnalités avancées déjà connues) et adapter la roadmap des autres pays en fonction des apprentissages ; allouer une capacité permanente pour la localisation dans le budget.`,
+    `C. Choisir le marché le plus simple (Côte d'Ivoire, mobile money dominant) pour le lancement initial et reporter les autres pays à une version 2.0.`,
+    `D. Développer 3 applications distinctes entièrement séparées pour chaque pays — la personnalisation maximale génère la meilleure adoption.`,
+  ],
+  correct:1,
+  explication:`La réponse B est correcte. L'architecture core + modules spécifiques est la stratégie optimale pour des marchés avec des comportements différents. Elle évite la fragmentation (3 applications séparées = 3 fois le coût de maintenance) tout en permettant l'adaptation aux spécificités locales. Les tests utilisateur ont révélé des différences fondamentales (paiement espèces vs mobile money vs fonctionnalités avancées) qui ne peuvent pas être ignorées sans risquer l'adoption. La standardisation forcée (A) sur 3 marchés aussi différents compromettrait l'usage dans au moins 2 des 3 marchés.`,
+},
+
 ];
 
 // ─── Utilitaires ────────────────────────────────────────────────
@@ -1342,8 +1969,18 @@ function construireExamen(n){
   const PR = TOUTES_QUESTIONS.filter(q=>q.domaine==="Processus");
   const EA = TOUTES_QUESTIONS.filter(q=>q.domaine==="Environnement d'affaires");
   const cP=Math.round(n*0.33), cPR=Math.round(n*0.41), cEA=n-cP-cPR;
-  const pick=(pool,nb)=>melanger(pool).slice(0,Math.min(nb,pool.length));
-  return melanger([...pick(P,cP),...pick(PR,cPR),...pick(EA,cEA)]).slice(0,n);
+  // pick with overflow: if pool smaller than needed, take all then fill from remainder
+  const pick=(pool,nb)=>{
+    const shuffled=melanger(pool);
+    if(shuffled.length>=nb) return shuffled.slice(0,nb);
+    return shuffled; // take all available
+  };
+  const pQ=pick(P,cP), prQ=pick(PR,cPR), eaQ=pick(EA,cEA);
+  const taken=new Set([...pQ,...prQ,...eaQ].map(q=>q.id));
+  // Fill remaining slots from unused questions proportionally
+  const reste=TOUTES_QUESTIONS.filter(q=>!taken.has(q.id)&&q.domaine!=="IA & Durabilité");
+  const combined=[...pQ,...prQ,...eaQ,...melanger(reste)];
+  return melanger(combined).slice(0,n);
 }
 
 function construireTheme(theme){
@@ -1551,7 +2188,7 @@ function Examen({questions,onTerminer,modeLabel}){
   const [idx,setIdx]=useState(0);
   const [rep,setRep]=useState({});
   const [rev,setRev]=useState({});
-  const [tps,setTps]=useState(MODES[questions.length]?MODES[questions.length].duree:45*60);
+  const [tps,setTps]=useState(MODES[questions.length]?MODES[questions.length].duree:THEME_DUREE);
   const [sig,setSig]=useState({});
   const [nav,setNav]=useState(false);
   const timer=useRef(null);
